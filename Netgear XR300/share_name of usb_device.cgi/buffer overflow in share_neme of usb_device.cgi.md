@@ -3,9 +3,12 @@
 
 
 **Affected Product**: Netgear XR300 Router
-**Vulnerability Type**: Buffer Overflow
 
 **Affected Firmware Versions**:  XR300-V1.0.3.38_10.3.30 
+
+**Official Firmware Resources** :(https://support.netgear.cn/doucument/detail.asp?id=2466)
+
+**Vulnerability Type**: Buffer Overflow
 
 **CVE Identifier**: 
 
