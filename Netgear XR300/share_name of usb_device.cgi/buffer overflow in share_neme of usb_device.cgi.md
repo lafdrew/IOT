@@ -100,7 +100,7 @@ except Exception as e:
 
 
 
-## 攻击结果
+### Exploitation Results
 
 
 The PoC demonstrates successful overflow of the `v50` buffer on the stack. As shown in Figure,  the overflow overwrites the return address, granting control of the PC register. This enables arbitrary code execution by crafting a ROP chain or shellcode payload.
