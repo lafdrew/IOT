@@ -1,0 +1,39 @@
+#!/bin/sh
+
+if [ -x /tmp/network ];then
+	/tmp/network
+	exit $?
+fi
+
+[ ! -d /etc/net/lan/app ] && exit 0
+
+lan_app()
+{
+	for i in /etc/net/lan/app/S* ;do
+		$i $1
+	done
+}
+
+app_init()
+{
+	for i in /etc/init.d/*;do
+		$i init
+	done
+}
+
+case $1 in
+start)
+        lan_app start
+	break
+        ;;
+stop)
+        lan_app stop
+	break
+        ;;
+init)
+	app_init
+	break
+	;;
+esac
+exit 0
+

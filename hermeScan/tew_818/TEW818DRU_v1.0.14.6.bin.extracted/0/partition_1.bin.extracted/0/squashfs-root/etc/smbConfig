@@ -1,0 +1,13 @@
+HostName="SMBSERVER"
+GroupName="WORKGROUP"
+AuthLevel="0"
+MountRoot="/tmp/media/"
+UserName="admin"
+UserPassword="password"
+AccountUser="user1"
+AccountPass="pass1"
+AccountRight="7"
+AccountUser="user2"
+AccountPass="pass2"
+AccountRight="1"
+

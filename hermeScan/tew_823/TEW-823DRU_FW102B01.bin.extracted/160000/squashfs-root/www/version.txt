@@ -1,0 +1,27 @@
+<html>
+<body>
+Firmware External Version: V<!--# echo sys_fw_version --><!--# echox sys_region NA --><br>
+Firmware Internal Version: V<font style="text-transform:uppercase;"><!--# echo sys_fw_version_build --></font><br>
+Date: <!--# echo sys_fw_date --><br>
+CheckSum: <!--# exec cgi /bin/checksum --><br>
+2.4GHz regulation domain: <!--# exec cgi /bin/wlan domain ctry_code 0 --><br>
+<!--# exec cgi /bin/wlan channel fixchan wlan0 --><br>
+5GHz country code:  <!--# exec cgi /bin/wlan domain ctry_code 1 --><br>
+<!--# exec cgi /bin/wlan channel fixchan wlan1_fix --><br>
+5GHz DFS Channel: <!--# exec cgi /bin/wlan channel DFS_channel --><br>
+802.11d country code:  <!--# exec cgi /bin/wlan domain w80211_ctry_code 1 --><br>
+2.4GHz SSID:<!--# echo wlan0_ssid --><br>
+5GHz SSID:<!--# echo wlan1_ssid --><br>
+WAN MAC:<font style="text-transform:uppercase;"> <!--# echo wan_mac --></font><br>
+LAN MAC:<font style="text-transform:uppercase;"> <!--# echo lan_mac --></font><br>
+2.4GHz WLAN MAC: <!--# exec cgi /bin/wlan info mac host 0 --><br>
+5GHz WLAN MAC: <!--# exec cgi /bin/wlan info mac host 1 --><br>
+Firmware Query: http://wrpd.dlink.com.tw/router/firmware/query.asp?model=<!--# echo fw_query_str --><br>
+</body></html>
+WWW SVN Revision: 13350(URL: svn://router/trunk/packages/www-TEW-823DRU/MP)<br>
+APPS SVN Revision: 13350(URL: svn://router/trunk/TEW-823DRU_apps)<br>
+APPS_CGI SVN Revision: 13350(URL: svn://router/trunk/TEW-823DRU_apps/cgi)<br>
+WIRELESS SVN Revision: 482(URL: svn://Ath_wireless/trunk/CUS223_PeregrineV2.0)<br>
+KERNEL INFO: da10f8011097dafb24c8b6671c715d9d56e14df1,Thu, 11 Jun 2015 10:20:01 +0800<br>
+BOOT INFO: <!--# exec cgi /bin/cli sys info loader --><br>
+ATHSDK SVN Revision: 247(URL: svn://AthSDK/trunk/AthSDK_AP136)<br>

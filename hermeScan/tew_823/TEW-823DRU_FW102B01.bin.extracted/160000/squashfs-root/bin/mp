@@ -1,0 +1,67 @@
+#!/bin/sh
+if [ -x /tmp/mp ];then
+	/tmp/mp $*
+	exit $?
+fi
+
+
+check_art2nvram()
+{
+	nvm=`nvram get $2`
+	art=`artblock_cmd get $1`
+	if [ $? -ne 255 ];then
+		if [ "${nvm}" != "${art}" ];then
+			# no match
+			echo "$1 and $2 does not match" > /dev/console
+			exit 1
+		fi
+	else
+		# can get $1 from artblock"
+		echo $1 cannot get from artblock > /dev/console
+		exit 1
+	fi
+}
+
+default_check()
+{
+	check_art2nvram wlan0_ssid wlan0_vap0_ssid
+	check_art2nvram wlan0_psk_pass_phrase wlan0_vap0_psk_pass_phrase
+	check_art2nvram wlan1_ssid wlan1_vap0_ssid
+	check_art2nvram wlan1_psk_pass_phrase wlan1_vap0_psk_pass_phrase
+	check_art2nvram admin_password admin_password
+
+	exit 0
+}
+
+show_reset_default_button()
+{
+	val=`cli sys reg read 0x18040004 1 b 17 | cut -d '=' -f 2`
+
+	if [ $val -eq 1 ];then
+		echo -n 0
+	else
+		echo -n 1
+	fi
+}
+
+case $1 in
+show_reset_default_button)
+	show_reset_default_button
+	;;
+mp_test_mode)
+	# mp no connect to internet, so can not detect bandwidth. then rc always busy...
+        killall clink
+	/etc/sysconfig/S2gpio.sh led_internet_sw
+	/etc/sysconfig/S2gpio.sh on 19
+	sleep 2
+	/etc/sysconfig/S2gpio.sh off 19
+	/etc/sysconfig/S2gpio.sh led_internet_hw
+	(while [ 1 ];do rcf=`cat /var/etc/rc_flag.conf`; if [ "$rcf" = "i" ];then rc restart; exit 0;fi;echo "XXX MP rc busy..." > /dev/console; sleep 3;done &);echo xx
+        #rc restart
+	;;
+default_check)
+	default_check
+	;;
+*)
+	;;
+esac

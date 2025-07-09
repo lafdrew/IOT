@@ -1,0 +1,1 @@
+wps_enable=<!--# exec cgi /bin/wlan wps mp -->, usb_connect=<!--# exec cgi /bin/file_access usb_mount -->,reset_button=<!--# exec cgi /bin/mp show_reset_default_button -->

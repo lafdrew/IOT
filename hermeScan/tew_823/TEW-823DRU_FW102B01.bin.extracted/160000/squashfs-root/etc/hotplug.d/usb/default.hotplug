@@ -1,0 +1,24 @@
+#!/bin/sh
+#this script is for noticing webfile_monitor only
+
+STOREFILE=/var/tmp/webfile/hotplug_info
+mkdir -p /tmp/tmp/webfile
+
+if [ -n "$PRODUCT" ]; then
+if [ -n "$MODALIAS" ]; then		
+	echo $ACTION/$PRODUCT > $STOREFILE
+	
+if [ "$ACTION" != "add" ]; then
+    RESULT="killall -17 webfile_monitor"
+	# "1d6b/2/206" is the value of $PRODUCT when no hotplug
+	echo "add/1d6b/2/206" > $STOREFILE
+fi	
+if [ "$ACTION" != "remove" ]; then
+	RESULT="killall -16 webfile_monitor"
+fi	
+    # MUST make sure this signal number is matched as shvar.h        
+    $RESULT
+	
+fi        
+fi   
+

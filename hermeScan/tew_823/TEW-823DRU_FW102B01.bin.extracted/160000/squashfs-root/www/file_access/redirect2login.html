@@ -1,0 +1,14 @@
+<script>
+	var model = "<!--# echo model_number -->";
+	var hw="<!--# echo sys_hw_version -->";
+	var regex = /model_number/g;
+	if (model == "DIR-652" || model.match(regex)) {
+		if(hw == "B1" ){
+			window.location.href ="login_pic.asp";	
+		}else{
+			window.location.href ="/cgi/ssi/login_pic.asp";
+		}
+	}else{
+		window.location.href ="login_pic.asp";
+	}
+</script>

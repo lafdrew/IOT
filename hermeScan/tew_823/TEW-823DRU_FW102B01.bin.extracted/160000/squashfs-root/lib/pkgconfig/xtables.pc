@@ -1,0 +1,12 @@
+
+prefix=/home/823/AthSDK/rootfs/target
+exec_prefix=${prefix}
+libdir=/home/823/AthSDK/rootfs/target/lib
+xtlibdir=${exec_prefix}/libexec/xtables
+includedir=${prefix}/include
+
+Name:		xtables
+Description:	Shared Xtables code for extensions and iproute2
+Version:	1.4.5
+Cflags:		-I${includedir}
+Libs:		-L${libdir} -lxtables

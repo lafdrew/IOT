@@ -1,0 +1,113 @@
+#!/bin/sh
+
+# This script runs when init it run during the boot process.
+# Mounts everything in the fstab
+
+mount -a
+mount -o remount +w /
+
+#
+# Mount the RAM filesystem to /tmp
+#
+
+#mount -t ramfs -n none /tmp
+mount -t tmpfs tmpfs /tmp -o size=10000k
+mount -t sysfs proc /sys
+
+#insmod nvram module
+insmod /lib/devnvram.ko
+#init sysinfo file to check artblock and nvram key
+cli sys info init
+if [ -d /etc/sysconfig/ ];then
+        for s in /etc/sysconfig/S* ;do
+                $s start
+        done
+fi
+
+# According to HW request, we need to disconnect 1.2v.
+mm 0xb8116cc0 0x633c8177
+# Fix 2.4G Antenna for DIR855L
+#mm 0xb804006c 0x00000082 #disable jtag
+#mm 0xb8040000 0x312310 #gpio 0,1,2,3 to output mode
+#mm 0xb8040008 0x00000028 #driver gpio 0,1,2,3
+#Fix 5G Antenna for DIR855L
+#mm 0xb0004050 0x3f008000
+#mm 0xb0004048 0x00004080
+
+
+export PATH=$PATH:/etc/ath
+
+# insmod /lib/modules/2.6.31/net/athrs_gmac.ko
+
+##
+## Put the names of the interfaces in the environmental variables
+## (They can be board unique)
+##
+
+# export WAN_IF=eth0
+# export LAN_IF=eth1
+# 
+# ifconfig $WAN_IF up
+# ifconfig $LAN_IF up
+# /etc/rc.d/rc.network
+# /etc/rc.d/rc.bridge
+# . /etc/ath/apcfg
+
+#
+# Enable USB
+#
+# insmod /lib/modules/2.6.31/usb/usbcore.ko
+# insmod /lib/modules/2.6.31/usb/ehci-hcd.ko
+# insmod /lib/modules/2.6.31/usb/usb-storage.ko
+# insmod /lib/modules/2.6.31/usb/usbnet.ko
+# insmod /lib/modules/2.6.31/usb/cdc_ether.ko
+
+#
+# Untar the debug tools into /tmp/tools
+#
+
+#mkdir /tmp/tools
+#cd /tmp/tools
+#tar -xzvf /sbin/debug.tgz
+
+#/usr/sbin/telnetd
+# /usr/sbin/httpd -h /usr/www/
+#/bin/factoryreset /dev/freset
+
+# start the page cache/kmem cache cleanup timer in the kernel
+# echo 1 > /proc/sys/vm/drop-cache
+
+# when processes uses page-cache more than 30% of system memory,
+# lets force them to write
+# echo 20 > /proc/sys/vm/dirty_ratio
+
+# when the dirty pages cross more than 5% of sys memory,
+# kick in the pdflush
+# echo 5 > /proc/sys/vm/dirty_background_ratio
+
+##
+## Check for Auto AP Start
+##
+
+# if [ "${WLAN_ON_BOOT}" = "y" ]; then
+#     /etc/ath/apup
+# fi
+
+# fix tcp option bug
+echo 0 > /proc/sys/net/ipv4/tcp_timestamps
+# enable syn cookies
+if [ -e /proc/sys/net/ipv4/tcp_syncookies ]; then
+	echo 1 > /proc/sys/net/ipv4/tcp_syncookies
+else
+	echo "/proc/sys/net/ipv4/tcp_syncookies not exists, SYN_COOKIES not enable !?"
+fi
+echo 3 > /proc/sys/net/ipv4/tcp_synack_retries
+echo 40 > /proc/sys/net/netfilter/nf_conntrack_tcp_timeout_syn_recv
+
+nvram get noinitrc
+if [ $? -eq 0 ];then
+	nvram unset noinitrc
+	nvram commit
+	exit 0
+fi
+rc init &

@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# echo "Let ethernet driver handle this !!!"
+exit 0
+
+echo "begin S3_s17_acl_ssdp.sh"
+
+
+echo "ACL # 15 - UPnP SSDP forwarding lan"
+# forward SSDP 239.255.255.250 to all port 0~4
+# IPv4 Pattern
+ethreg 0x404=0xeffffffa
+ethreg 0x408=0x00000000
+ethreg 0x40c=0x00000000
+ethreg 0x410=0x00000000
+ethreg 0x414=0x0000001f
+ethreg 0x400=0x8000000b
+# Mask
+ethreg 0x404=0xffffffff
+ethreg 0x408=0x00000000 
+ethreg 0x40c=0x00000000
+ethreg 0x410=0x00030000
+ethreg 0x414=0x000000c2
+ethreg 0x400=0x8000010b
+# IPv4 Result
+ethreg 0x404=0x00000000
+ethreg 0x408=0xe0000000
+ethreg 0x40c=0x00000013
+ethreg 0x410=0x00000000
+ethreg 0x414=0x00000000
+ethreg 0x400=0x8000020b
+
+echo "end S3_s17_acl_ssdp.sh"

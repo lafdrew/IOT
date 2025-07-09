@@ -1,0 +1,29 @@
+<html>
+<body>
+Firmware Version: ver<!--# echo sys_fw_version_build --><br>
+Firmware Date: <!--# echo sys_fw_week -->, <!--# echo sys_fw_date --><br>
+KERNEL: <!--# echo sys_kernel_info_version --><br>
+Wireless Domain: <!--# echo sys_wlan0_domain --><br>
+SSID: <!--# echo wlan0_vap0_ssid --><br>
+SSID_1: <!--# echo wlan1_vap0_ssid --><br>
+WLAN 0 Channel List: <!--# exec cgi /bin/wlan channel fixchan wlan0 --><br>
+WLAN 1 Channel List: <!--# exec cgi /bin/wlan channel fixchan wlan1_fix --><br>
+WLAN MAC 0: <!--# echo wlan0_mac --><br>
+WLAN MAC 1: <!--# echo wlan1_mac --><br>
+LAN MAC: <!--# echo lan_mac --><br>
+WAN MAC: <!--# echo wan_mac --><br>
+HW Ver: <!--# echo sys_hw_version --><br>
+checksum: <!--# exec cgi /bin/checksum --><br>
+CONFIG_VERSION: <!--# echo sys_config_version_major -->.<!--# echo sys_config_version_minor --><br>
+<!--# exec cgi /bin/lang multi-lang --><br>
+Default: <!--# exec cgi /bin/mp_default --><br>
+</body>
+</html>
+WWW SVN Revision: 13350(URL: svn://router/trunk/packages/www-TEW-823DRU/MP)<br>
+APPS SVN Revision: 13350(URL: svn://router/trunk/TEW-823DRU_apps)<br>
+APPS_CGI SVN Revision: 13350(URL: svn://router/trunk/TEW-823DRU_apps/cgi)<br>
+WIRELESS SVN Revision: 482(URL: svn://Ath_wireless/trunk/CUS223_PeregrineV2.0)<br>
+Ethernet SVN Revision: 44(URL: svn://Ath_enet/trunk/ethernet)<br>
+KERNEL INFO: da10f8011097dafb24c8b6671c715d9d56e14df1,Thu, 11 Jun 2015 10:20:01 +0800 <br>
+BOOT INFO: <!--# exec cgi /bin/cli sys info loader --><br>
+ATHSDK SVN Revision: 247(URL: svn://AthSDK/trunk/AthSDK_AP136)<br>

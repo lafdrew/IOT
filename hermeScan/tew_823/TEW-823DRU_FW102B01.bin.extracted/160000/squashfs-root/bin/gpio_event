@@ -1,0 +1,83 @@
+#!/bin/sh
+
+# This is for AR9344 gpio event only
+# it's called by kernel module ar934x_gpio
+
+RESET="16"
+RESTORE="17"
+
+APMODE="21"
+
+[ $# -ne 2 ] && exit 0
+
+echo $1
+
+if [ -f /tmp/test_mode ]; then
+	exit 0
+fi
+
+reset_default_up()
+{
+	# /tmp/reset_event more then 5 sec.
+	[ ! -f /tmp/reset_default_event ] && exit 0
+	t1=`cat /tmp/reset_default_event`
+	let t1=$t1+5
+	t2=`date +%s`
+
+	if [ $t1 -le $t2 ];then
+		gpio POWER_LED off &
+		gpio STATUS_LED on &
+		# XXX for NTT project...
+		cli sys nvram restore
+		if [ -d /etc/sysconfig/ ];then
+			for s in /etc/sysconfig/S* ;do
+			$s restore
+			done
+			nvram commit
+		fi
+		# reinitialize streamboost mtd5
+		REQUEST_METHOD=POST /www/./factory-reset-extra.cgi
+		# -------------------------
+		reboot -d 3 &
+	fi
+}
+reset_up()
+{
+	# /tmp/reset_event more then 5 sec.
+	[ ! -f /tmp/reset_event ] && exit 0
+	t1=`cat /tmp/reset_event`
+	let t1=$t1+5
+	t2=`date +%s`
+
+	if [ $t1 -le $t2 ];then
+		#gpio POWER_LED off &
+		#gpio STATUS_LED on &
+		reboot -d 3 &
+	fi
+}
+case $1 in
+$RESTORE)
+	echo reset_default $2
+	if [ $2 = "down" ];then
+		date +%s >  /tmp/reset_default_event
+	else
+		reset_default_up
+	fi
+	;;
+$APMODE)
+	reboot -d 3 &	
+	;;
+$RESET)
+	echo reset $2
+	if [ $2 = "down" ];then
+		#for NTT only
+		echo "1" > /var/tmp/mp_wps
+		date +%s >  /tmp/reset_event
+	else
+		reset_up
+	fi
+	;;
+*)
+	echo other
+	;;
+esac

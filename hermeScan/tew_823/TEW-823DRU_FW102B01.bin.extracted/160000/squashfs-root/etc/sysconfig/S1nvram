@@ -1,0 +1,89 @@
+#!/bin/sh
+
+artblock_init()
+{
+#	ssid=`artblock_cmd get wlan0_ssid`
+	default=`nvram get restore_default`
+#	if [ "$ssid" = "" ];then
+#		echo setup wlan0_ssid to artblock................
+#		artblock_cmd set wlan0_ssid dlink
+#		artblock_cmd set wlan0_psk_pass_phrase 1234567890
+#	fi
+
+#	if [ "$default" = "1" ] && [ "$ssid" = "dlink" ];then
+#		echo change lo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#		nvram set wlan0_security="disable"
+#		nvram set wps_configured_mode=1
+#	fi
+	for k in wlan0_vap0_ssid wlan1_vap0_ssid wlan0_vap0_psk_pass_phrase wlan1_vap0_psk_pass_phrase;do
+		m=$(echo $k | sed -e 's/_vap0//g')
+		v=`artblock_cmd get $m`
+		if [ $? -ne 255 ];then
+			nv=`nvram get $k`
+			if [ "$default" = "1" ] && [ "$nv" = "TRENDnet_2.4GHz_WXYZ" -o "$nv" = "TRENDnet_5GHz_WXYZ" -o "$nv" = "wxyz1234" ];then
+				echo nvram set "${k}=${v}"
+				nvram set "${k}=${v}"
+			fi
+		else
+			echo "can get $m from art"
+		fi
+	done
+
+	v=`artblock_cmd get admin_password`
+	for p in admin_password ftp_admin_pass smb_admin_pass;do
+		nv=`nvram get $p`
+		if [ "$default" = "1" ] && [ -z "$nv" -o "$nv" = "admin" ];then
+			echo nvram set "${p}=${v}"
+			nvram set "${p}=${v}"
+		else
+			echo "admin password is not default setting (empty)"
+		fi
+	done 
+
+	v=`artblock_cmd get wps_pin`
+	for p in wps_pin wps_default_pin; do
+		nv=`nvram get $p`
+		if [ "$default" = "1" ] && [ -n "$v" ];then
+			echo nvram set "${p}=${v}"
+			nvram set "${p}=${v}"
+		else
+			"cannot get wps_pin from art"
+		fi
+	done
+}
+
+artblock2nvram()
+{
+	v=`artblock_cmd get $1`
+	if [ $? -ne 255 ];then
+		echo nvram set "$2=${v}"
+		nvram set "$2=${v}"
+	else
+		echo "can get $2 from art"
+	fi
+
+}
+
+restore_keys()
+{
+	# used by
+	# 1. MP smac -setssid... setpharsekey, setsecurity...
+	# 2. restore deafult from button and GUI.
+	artblock2nvram wlan0_ssid wlan0_vap0_ssid
+	artblock2nvram wlan0_psk_pass_phrase wlan0_vap0_psk_pass_phrase
+	artblock2nvram wlan1_ssid wlan1_vap0_ssid
+	artblock2nvram wlan1_psk_pass_phrase wlan1_vap0_psk_pass_phrase
+	artblock2nvram admin_password admin_password
+	artblock2nvram admin_password ftp_admin_pass
+	artblock2nvram admin_password smb_admin_pass
+	nvram commit
+	#nvram set mbssid_vap1_security=wpa2auto_psk
+}
+case $1 in
+start)
+	artblock_init
+	;;
+restore)
+	restore_keys
+	;;
+esac

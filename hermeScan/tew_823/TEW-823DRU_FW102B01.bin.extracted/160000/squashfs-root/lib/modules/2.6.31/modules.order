@@ -1,0 +1,13 @@
+kernel/arch/mips/atheros/ar934x_gpio.ko
+kernel/drivers/scsi/scsi_wait_scan.ko
+kernel/drivers/usb/host/ehci-hcd.ko
+kernel/drivers/usb/host/ohci-hcd.ko
+kernel/drivers/usb/storage/usb-storage.ko
+kernel/net/ipv6/netfilter/ip6_tables.ko
+kernel/net/ipv6/netfilter/ip6table_filter.ko
+kernel/net/ipv6/netfilter/ip6table_mangle.ko
+kernel/net/ipv6/netfilter/nf_conntrack_ipv6.ko
+kernel/net/ipv6/netfilter/ip6t_ipv6header.ko
+kernel/net/ipv6/netfilter/ip6t_rt.ko
+kernel/net/ipv6/netfilter/ip6t_REJECT.ko
+kernel/net/ipv6/netfilter/ip6t_CTFILTER.ko

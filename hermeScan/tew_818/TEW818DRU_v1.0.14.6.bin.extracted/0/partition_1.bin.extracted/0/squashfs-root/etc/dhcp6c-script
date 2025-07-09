@@ -1,0 +1,479 @@
+#!/bin/sh
+# Program:
+# 	Parse options of dhcp packet from dhcp6 server
+# 
+# History:
+# 2014/08/06	June.chen for TEW-818DRU
+# 2013/09/05	June.Chen for Linksys E1700
+# 2011/11/02	Joan.Huang create
+# 
+
+RESOLV_V6_CONF="/tmp/wanv6_resolv.conf"
+#RESOLV_WAN_CONF="/tmp/wan_resolv.conf"
+RESOLV_CONF="/tmp/resolv.conf"
+RADVD_CONF="/tmp/radvd.conf"
+RADVD_CONF_TMP="/tmp/radvd_tmp.conf"
+NTP_V6_CONF="/tmp/ntp_v6.conf"
+AFTR_CONF="/tmp/aftr.conf"
+PRE_CONF="/tmp/dhcp6c_prefix_list"
+PRE_LIFE_CONF="/tmp/dhcp6c_prefix_life"
+RDNSS_CONF="/tmp/rdnss_from_ra"
+DNSSL_CONF="/tmp/dnssl_from_ra"
+ROUTE_LIFE_CONF="/tmp/route_life_from_ra"
+IPV6_RA_MODE_FILE="/tmp/ipv6_ra_mode"
+
+wan_mode=`nvram get wan_proto`
+if [ "$wan_mode" == "pppoe" ] || [ "$wan_mode" == "pptp" ] || [ "$wan_mode" == "l2tp" ]; then
+	wan_if="ppp0"
+else
+	wan_if="vlan2"
+fi
+
+wan_if1="vlan2"
+lan_if="br0"
+
+config_ula()
+{
+	tmp_mac=`ifconfig $wan_if1 | grep HWaddr | sed -e 's/^.*HWaddr //g' | sed -e 's/ .*$//g'`
+	ula_prefix="fd00:"
+	buf=`echo "$tmp_mac" | awk '{FS=":"} {print $1}'`
+	ula_prefix="${ula_prefix}${buf}"
+	buf=`echo "$tmp_mac" | awk '{FS=":"} {print $2}'`
+	ula_prefix="${ula_prefix}${buf}:"
+	buf=`echo "$tmp_mac" | awk '{FS=":"} {print $3}'`
+	ula_prefix="${ula_prefix}${buf}"
+	buf=`echo "$tmp_mac" | awk '{FS=":"} {print $4}'`
+	ula_prefix="${ula_prefix}${buf}:"
+	buf=`echo "$tmp_mac" | awk '{FS=":"} {print $5}'`
+	ula_prefix="${ula_prefix}${buf}"
+	buf=`echo "$tmp_mac" | awk '{FS=":"} {print $6}'`
+	ula_ip_prefix="${ula_prefix}${buf}:"
+	ula_prefix="${ula_prefix}${buf}::"
+
+	echo "	" >> $RADVD_CONF_TMP
+	echo "	prefix $ula_prefix/64" >> $RADVD_CONF_TMP
+	echo "	{" >> $RADVD_CONF_TMP
+	echo "		AdvOnLink on ;" >> $RADVD_CONF_TMP
+	echo "		AdvAutonomous $AdvAutonomous ;" >> $RADVD_CONF_TMP
+	echo "		AdvRouterAddr $AdvRouterAddr ;" >> $RADVD_CONF_TMP
+	echo "		AdvValidLifetime 7200 ;" >> $RADVD_CONF_TMP
+	echo "		AdvPreferredLifetime 3600 ;" >> $RADVD_CONF_TMP
+	echo "	};" >> $RADVD_CONF_TMP
+
+	lan_old_ula_ip=`ifconfig $lan_if | grep Scope:Global | grep fd00 | awk '{printf $3}'`
+	if [ -n "$lan_old_ula_ip" ]; then
+		ip -6 addr del $lan_old_ula_ip dev $lan_if scope global
+	fi
+
+	lan_mac=`ifconfig $lan_if | grep Scope:Link | sed -e 's/^.*fe80:://g' | sed -e 's/\/.*//g'`
+	ip -6 addr add "${ula_ip_prefix}${lan_mac}/64" dev $lan_if scope global
+}
+
+#
+# $1 : 0: Stateful DHCPv6
+#        1: Stateless DHCPv6
+#        2: SLAAC
+# $2 : 1: delegated prefix change
+#
+config_radvd()
+{
+	v4_wan_mode=`nvram get wan_proto`
+
+	MaxRtrAdvInterval=200
+	MinRtrAdvInterval=`expr $MaxRtrAdvInterval / 3`
+        AdvDNSSLLifetime=`expr $MaxRtrAdvInterval \* 2`
+        AdvRDNSSLifetime=`expr $MaxRtrAdvInterval \* 2`
+	AdvManagedFlag="off"
+	AdvOtherConfigFlag="off"
+	AdvAutonomous="on"
+	AdvRouterAddr="off"
+	if [ "$v4_wan_mode" == "dhcp" -o "$v4_wan_mode" == "static" ]; then
+		AdvLinkMTU="1500"
+	else
+		AdvLinkMTU="1400"
+	fi
+	LifeTime_sec=`cat $PRE_LIFE_CONF | awk '{print $2}'`
+	PreferredLifetime=`cat $PRE_LIFE_CONF | awk '{print $1}'`
+	lanPrefix=`cat $PRE_CONF | sed -e 's/\/.*$//g'`
+	lanPrefixLen=`cat $PRE_CONF | sed -e 's/^.*\///g'`
+
+	rm -f $PRE_CONF
+	rm -f $PRE_LIFE_CONF
+
+	if [ "$1" == "2" ]; then
+		rdnss=`cat $RDNSS_CONF`
+		dnssl=`cat $DNSSL_CONF`
+		def_life_time=`cat $ROUTE_LIFE_CONF`
+	fi
+
+	#def_life_time=`cat $ROUTE_LIFE_CONF`
+
+	echo -n "" > $RADVD_CONF_TMP
+	echo "interface br0 {" >> $RADVD_CONF_TMP
+	echo "	AdvSendAdvert on ;" >> $RADVD_CONF_TMP
+	echo "	AdvManagedFlag $AdvManagedFlag ;" >> $RADVD_CONF_TMP
+	echo "	AdvOtherConfigFlag $AdvOtherConfigFlag ;" >> $RADVD_CONF_TMP
+	echo "	MaxRtrAdvInterval $MaxRtrAdvInterval ;" >> $RADVD_CONF_TMP
+#	echo "	AdvDefaultPreference low ;" >> $RADVD_CONF_TMP
+	echo "	AdvHomeAgentFlag off ;" >> $RADVD_CONF_TMP
+	echo "	MinRtrAdvInterval $MinRtrAdvInterval ;" >> $RADVD_CONF_TMP
+	echo "	AdvCurHopLimit 64 ;" >> $RADVD_CONF_TMP
+
+	if [ "$lanPrefix" == "" -o "$lanPrefixLen" == "" ]; then
+		dr_time="0"
+	else
+		if [ "$def_life_time" != "" ]; then
+			#echo "	AdvDefaultLifetime $def_life_time ;" >> $RADVD_CONF_TMP
+			dr_time="$def_life_time"
+		else
+			#echo "	AdvDefaultLifetime 1800 ;" >> $RADVD_CONF_TMP
+			dr_time="1800"
+		fi
+	fi
+
+	echo "	AdvDefaultLifetime $dr_time ;" >> $RADVD_CONF_TMP
+#	echo "	AdvReachableTime 0 ;" >> $RADVD_CONF_TMP
+#	echo "	AdvRetransTimer 10000 ;" >> $RADVD_CONF_TMP
+	echo "	AdvLinkMTU $AdvLinkMTU ;" >> $RADVD_CONF_TMP
+
+	config_ula
+
+	if [ "$2" == "1" ]; then
+		LifeTime_sec="7200"
+		PreferredLifetime="0"
+	fi
+
+	echo "	" >> $RADVD_CONF_TMP
+	if [ "$lanPrefix" != "" -a "$lanPrefixLen" != "" ]; then
+		echo "	prefix $lanPrefix/$lanPrefixLen" >> $RADVD_CONF_TMP
+		echo "	{" >> $RADVD_CONF_TMP
+		echo "		AdvOnLink on ;" >> $RADVD_CONF_TMP
+		echo "		AdvAutonomous $AdvAutonomous ;" >> $RADVD_CONF_TMP
+		echo "		AdvRouterAddr $AdvRouterAddr ;" >> $RADVD_CONF_TMP
+		echo "		AdvValidLifetime $LifeTime_sec ;" >> $RADVD_CONF_TMP
+		echo "		AdvPreferredLifetime $PreferredLifetime ;" >> $RADVD_CONF_TMP
+		echo "	};" >> $RADVD_CONF_TMP
+
+		echo "	" >> $RADVD_CONF_TMP
+		echo "	route $lanPrefix/$lanPrefixLen" >> $RADVD_CONF_TMP
+		echo "	{" >> $RADVD_CONF_TMP
+		echo "		AdvRouteLifetime  $dr_time ;" >> $RADVD_CONF_TMP
+		echo "	};" >> $RADVD_CONF_TMP
+	fi
+
+	if [ "$rdnss" != "" ]; then
+		echo "	" >> $RADVD_CONF_TMP
+		echo "	RDNSS $rdnss" >> $RADVD_CONF_TMP
+		echo "	{" >> $RADVD_CONF_TMP
+		echo "		AdvRDNSSLifetime $AdvRDNSSLifetime ;" >> $RADVD_CONF_TMP
+		echo "	};" >> $RADVD_CONF_TMP
+	fi
+
+	if [ "$dnssl" != "" ]; then
+		echo "	" >> $RADVD_CONF_TMP
+		echo "	DNSSL $dnssl" >> $RADVD_CONF_TMP
+		echo "	{" >> $RADVD_CONF_TMP
+		echo "		AdvDNSSLLifetime $AdvDNSSLLifetime ;" >> $RADVD_CONF_TMP
+		echo "	};" >> $RADVD_CONF_TMP
+	fi
+
+	echo "};" >> $RADVD_CONF_TMP
+	cp -f $RADVD_CONF_TMP $RADVD_CONF
+	rm -f $RADVD_CONF_TMP
+}
+
+add_ipv6_addr_with_DAD() {
+	ip -6 addr add ${new_ip6_address}/${new_ip6_prefixlen} dev ${interface} scope global
+
+	# repeatedly test whether newly added address passed
+	# duplicate address detection (DAD)
+	loop="1 2 3 4 5"
+	for i in $loop; do
+		sleep 1 # give the DAD some time
+
+		# tentative flag == DAD is still not complete
+		tentative=$(ip -6 addr show dev ${interface} tentative | grep ${new_ip6_address}/${new_ip6_prefixlen})
+		# dadfailed flag == address is already in use somewhere else
+		dadfailed=$(ip -6 addr show dev ${interface} dadfailed | grep ${new_ip6_address}/${new_ip6_prefixlen})
+
+		if [ -n "${dadfailed}" ] ; then
+			ip -6 addr del ${new_ip6_address}/${new_ip6_prefixlen} dev ${interface}
+			return 3
+		fi
+		if [ -z "${tentative}" ] ; then
+			# DAD is over
+			return 1
+		fi
+	done
+
+	return 1
+}
+
+check_prefix()
+{
+	pd_tmp=`echo ${new_ip6_prefix} | awk '{FS="/"} {print $1}'`
+	pd_len_tmp=`echo ${new_ip6_prefix} | awk '{FS="/"} {print $2}'`
+
+	if [ "$pd_len_tmp" != "64" ]; then
+		pd_len="64"
+	else
+		pd_len="$pd_len_tmp"
+	fi
+
+	flag="0"
+	buf=`echo "$pd_tmp" | awk '{FS=":"} {print $1}'`
+	pd="$buf"
+		
+	buf=`echo "$pd_tmp" | awk '{FS=":"} {print $2}'`
+	if [ "$buf" != "" ]; then
+		pd="$pd:$buf"
+			
+		buf=`echo "$pd_tmp" | awk '{FS=":"} {print $3}'`
+
+		if [ "$buf" != "" ]; then
+			pd="$pd:$buf"
+			buf=`echo "$pd_tmp" | awk '{FS=":"} {print $4}'`
+
+			if [ "$buf" != "" ]; then
+				pd="$pd:$buf"
+			else
+				flag="1"
+			fi
+		else
+			flag="1"
+		fi
+	else
+		flag="1"
+	fi
+
+	if [ "$flag" == "1" ]; then
+		pd_ip="$pd::"
+	else
+		pd_ip="$pd:"
+	fi
+	pd="$pd::"
+
+	lan_old_ip=`ifconfig $lan_if | grep Scope:Global | grep -v fd00 | awk '{printf $3}'`
+	if [ -n "$lan_old_ip" ]; then
+		ip -6 addr del $lan_old_ip dev $lan_if scope global
+	fi
+
+	lan_mac=`ifconfig $lan_if | grep Scope:Link | sed -e 's/^.*fe80:://g' | sed -e 's/\/.*//g'`
+	ip -6 addr add "${pd_ip}${lan_mac}/$pd_len" dev $lan_if scope global
+	
+	echo "$pd/$pd_len" > $PRE_CONF
+	echo "${new_preferred_life} ${new_max_life}" > $PRE_LIFE_CONF
+
+	wan_ip_exist=`ifconfig $wan_if | grep "inet6 addr" | grep "Scope:Global"`
+	if [ "$wan_ip_exist" == "" ]; then
+		wan_mac=`ifconfig $wan_if | grep Scope:Link | sed -e 's/^.*fe80:://g' | sed -e 's/\/.*//g'`
+		ip -6 addr add "${pd_ip}${wan_mac}/$pd_len" dev $wan_if scope global
+	fi
+}
+
+set_ip6_na()
+{	
+	ip -6 addr del ${old_ip6_address}/${old_ip6_prefixlen} dev $wan_if scope global
+#	ip -6 addr add ${new_ip6_address}/${new_ip6_prefixlen} dev $wan_if scope global
+	add_ipv6_addr_with_DAD
+	result=$?
+	return $result
+}
+
+set_ip6_pd()
+{
+	if [ -z "${new_ip6_prefix}" ] || [ -z "${new_max_life}" ] || [ -z "${new_preferred_life}" ]; then
+		echo "Error: no PD or life time"
+	fi
+
+	check_prefix
+
+	if [ "${reason}" == "BOUND6" ] && [ "${new_ip6_prefix}" == "${old_ip6_prefix}" ]; then
+		config_radvd $mode 1
+#		cp $RADVD_CONF $RADVD_CONF_TMP
+		v6wan_mode=`nvram get wan_ipv6_mode`
+		radvd_id=`ps | grep radvd | grep -v grep`
+		if [ -z "$radvd_id" ]; then
+			radvd -C $RADVD_CONF -d 1 &
+		else
+			killall -SIGHUP radvd
+		fi
+
+	fi
+
+	if [ -n "${new_dhcp6_sntp_servers}" ]; then
+		echo "${new_dhcp6_sntp_servers}" > $NTP_V6_CONF
+	fi
+
+	if [ -n "${new_dhcp6_aftr}" ]; then
+		echo "${new_dhcp6_aftr}" > $AFTR_CONF
+	fi
+
+	if [ "$1" != "2" ]; then
+		echo -n > $RESOLV_V6_CONF
+		if [ -n "${new_dhcp6_name_servers}" ]; then
+			for dns in ${new_dhcp6_name_servers} ; do
+				echo "nameserver $dns" >> $RESOLV_V6_CONF
+				rdnss="$rdnss $dns"
+			done
+		fi
+		
+		if [ -n "${new_dhcp6_domain_search}" ]; then
+			for sl in ${new_dhcp6_domain_search} ; do
+				echo "search $sl" >> $RESOLV_V6_CONF
+				dnssl="$dnssl $sl"
+			done
+		fi
+
+#		cat $RESOLV_WAN_CONF $RESOLV_V6_CONF > $RESOLV_CONF
+		v4_dns1=`nvram get wan0_dns | awk '{print $1}'`
+		v4_dns2=`nvram get wan0_dns | awk '{print $2}'`
+
+		echo -n > $RESOLV_CONF 
+		if [ "$v4_dns1" != "" ]; then
+			echo "nameserver $v4_dns1" >> $RESOLV_CONF
+		fi
+		if [ "$v4_dns2" != "" ]; then
+			echo "nameserver $v4_dns2" >> $RESOLV_CONF
+		fi
+	
+		cat $RESOLV_V6_CONF >> $RESOLV_CONF
+	fi
+}
+
+#config dhcpv6 ip, prefix, etc.
+# $1: 0: Stateful DHCPv6
+#     1: Stateless DHCPv6
+#     2: SLAAC
+dhcp6_config()
+{
+	if [ -z "${new_ip6_prefix}" ] && [ -z "${new_ip6_address}" ]; then
+#		echo "Prefix ${reason} old=${old_ip6_prefix} new=${new_ip6_prefix}"
+		return 2
+	fi
+
+	case "${reason}" in
+		BOUND6)
+			if [ "$1" == "0" ]; then
+				if [ -n "${new_ip6_address}" ] && [ -n "${new_ip6_prefixlen}" ]; then
+#					ip -6 addr add ${new_ip6_address}/${new_ip6_prefixlen} dev $wan_if scope global
+					set_ip6_na
+					result=$?
+					return $result
+				else
+					set_ip6_pd $1
+				fi
+			else
+				set_ip6_pd $1
+			fi
+		;;
+		RENEW6|REBIND6)
+			if [ "$1" == "0" ]; then
+				if [ -n "${new_ip6_address}" ] && [ -n "${new_ip6_prefixlen}" ]; then
+#					if [  ! "${new_ip6_address}" = "${old_ip6_address}" ]; then
+#						ip -6 addr add ${new_ip6_address}/${new_ip6_prefixlen} dev $wan_if scope global
+						set_ip6_na
+						result=$?
+						return $result
+#					fi
+				else
+					set_ip6_pd $1
+				fi
+			else 
+				set_ip6_pd $1
+			fi
+
+#			if [ ! "${new_dhcp6_name_servers}" = "${old_dhcp6_name_servers}" ] || [ ! "${new_dhcp6_domain_search}" = "${old_dhcp6_domain_search}" ]; then
+#			set_ip6_pd $1	
+#			fi
+		;;
+	esac
+
+#	sysctl firewall -I
+
+	return 0	
+}
+
+echo -n > $NTP_V6_CONF
+#if [ ! -e $RESOLV_WAN_CONF  ]; then
+#	echo -n > $RESOLV_WAN_CONF
+#fi 
+
+rdnss=""
+dnssl=""
+
+mode=`cat $IPV6_RA_MODE_FILE`
+
+echo "" > /dev/console
+echo "${reason}" > /dev/console
+echo "" > /dev/console
+
+case "${reason}" in
+	PREINIT6)
+		ip link set $lan_if up
+		ip link set $wan_if up
+#		ip -6 addr flush dev $lan_if scope global permanent
+		ip -6 addr flush dev $wan_if scope global permanent
+#		config_radvd $mode
+#		v6wan_mode=`nvram get wan_ipv6_mode`
+#		radvd_id=`ps | grep radvd | grep -v grep`
+#		if [ -z "$radvd_id" ]; then
+#			radvd -C $RADVD_CONF -i "$wan_if" -w "$v6wan_mode" -d 1 &
+#		else
+#			killall -SIGHUP radvd
+#		fi
+
+		exit 0
+	;;
+
+	BOUND6|RENEW6|REBIND6)
+		dhcp6_config $mode
+		result=$?
+		if [ "$result" != "0" ]; then
+			exit $result
+		fi
+		config_radvd $mode
+		v6wan_mode=`nvram get wan_ipv6_mode`
+		radvd_id=`ps | grep radvd | grep -v grep`
+		if [ -z "$radvd_id" ]; then
+			radvd -C $RADVD_CONF -d 1 &
+		else
+			killall -SIGHUP radvd
+		fi
+
+	;;
+
+	DEPREF6)
+		if [ x${new_ip6_prefixlen} = x ] ; then
+			exit 2
+		fi
+
+		ip -6 addr change ${new_ip6_address}/${new_ip6_prefixlen} dev $wan_if scope global preferred_lft 0
+		exit 0
+	;;
+
+	EXPIRE6|RELEASE6|STOP6)
+		if [ "${reason}" != "STOP6" ]; then
+			config_radvd $mode
+			v6wan_mode=`nvram get wan_ipv6_mode`
+			radvd_id=`ps | grep radvd | grep -v grep`
+			if [ -z "$radvd_id" ]; then
+				radvd -C $RADVD_CONF -d 1 &
+			else
+				killall -SIGHUP radvd
+			fi
+		fi
+		
+		if [ x${old_ip6_address} = x ] || [ x${old_ip6_prefixlen} = x ] ; then
+			exit 2
+		fi
+
+		rm -f $RESOLV_V6_CONF
+		ip -6 addr del ${old_ip6_address}/${old_ip6_prefixlen} dev $wan_if
+		exit 0
+	;;
+
+esac
+
+exit 0
+

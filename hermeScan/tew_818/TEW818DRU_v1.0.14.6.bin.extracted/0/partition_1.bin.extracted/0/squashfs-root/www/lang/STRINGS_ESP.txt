@@ -1,0 +1,1212 @@
+﻿id,string
+image.lang,_esp.gif
+image.lang.png,_SP.png
+leftimage,_esp.gif
+leftlength,160
+css.lang,submenubg_esp
+buttonWidth,button1_NoWidth
+buttonWidth2,button1
+address,Dirección
+administrator,Administrador
+allow,Permitir
+any,Cualquiera
+apply,Aplicar
+apsd,APSD
+association,Asociación
+authorized,Autorizado
+auto,Auto
+both,Ambos
+cancel,Cancelar
+channel,Canal
+clear,Borrar
+close,Cerrar
+day,Día
+days,Días
+default,Predeterminado
+default.gateway,Gateway Predeterminado
+deny,Rechaza
+destination,Destino
+disable,Deshabilita
+disabled,Deshabilitada
+enable,Habilita
+enabled,Habilitado
+gateway,Gateway
+guest.network,Invitado de la red
+high,Alto
+highest,Lo más alto
+hour,Hora
+import,Importa
+interface,Interfaz
+internal.network,Red interna
+ip,IP
+ip.address,Dirección IP
+lan,LAN
+lan.ip.address,Dirección IP LAN
+link,Enlace
+low,Bajo
+lowest,Más bajo
+mac,MAC
+mac.address,Dirección MAC
+manual,Manual
+match,Correspondencia
+medium,Medio
+metric,Métrica
+minute,minuto
+month,Mes
+multiple,Multiplo
+netmask,Máscara de red
+no,No(o Número)
+none,NINGUNO
+off,Apagado
+ok,Aceptar
+on,Encendido
+password,Contraseña
+permission,Permiso
+port.range,Rangos de puertos
+power,Energía
+project.desc,Router wireless de banda doble AC1900
+protocol,Protocolo
+refresh,Actualiza
+release,Libera
+renew,Renueva
+reset,Restablece
+save,Guardar
+schedule,Planificación
+second,Segundo
+security.mode,Modo de Seguridad
+select,Selecciona
+subnet.mask,Máscara de Subred
+tcp,TCP
+time,Hora
+times,Tiempos
+trigger,Disparador
+udp,UDP
+user.name,Nombre de Usuario
+wireless.interface,Interfaz inalámbrica
+wireless.name.ssid,Nombre de Inalámbrico(SSID)
+wireless.network,Red Inalámbrica
+wireless.network.ac,Red wireless AC(802.11ac/a/n)
+wmm,WMM
+year,Año
+yes,Sí
+access.alert.1,El puerto Comienco de destino debe ser inferior al Puerto de Destino final
+access.client.filters.func,Función de filtro de cliente  LAN
+access.desc,Paquetes filtro de direcciones IP destinados a ciertos rangos de puertos durante las horas especificadas.
+access.lan.client.filters,Reglas filtrar clientes LAN
+access.lan.ip.range,Rango de direcciones IP LAN
+access.lan.ip.range,Rango dirección IP LAN
+access.title,Control de Acceso
+access.url.filters,Normas de filtrado Webs URL
+access.url.filters.func,Función de filtrado Webs URL
+adm.node.file.sharing,Compartir filas
+adm.node.management,Gerenciamiento
+adm.node.settings,Manejo de Ajustes
+adm.node.status,Estado
+adm.node.system.log,Log del Sistema
+adm.node.time,Hora
+adm.node.upload,Carga el Firmware
+adv.2,Intervalo de Alertas
+adv.3,DTIM
+adv.4,Umbral de Fragmentación
+adv.5,Umbral RTS
+adv.6,Preámbulo corto
+adv.7,20/40 MHz Convivencia
+adv.desc,Usa la página de Configuración Avanzada para realizar los ajustes detallados para la Inalámbrica. Los Ajustes Avanzados incluyen items que no están disponibles en la página de Configuración Básica, tales como intervalo de Alertas, etc.
+adv.node.ac,Control de Acceso
+adv.node.dmz,DMZ
+adv.node.filter,Filtro
+adv.node.gaming,Juegos
+adv.node.network,Red Avanzada
+adv.node.routing,Enrutamiento
+adv.node.schedule,Planificación
+adv.node.special.app,Aplicaciones Especiales
+adv.node.virtual.server,Servidor Virtual
+adv.node.alg,ALG
+adv.node.dos,DoS
+adv.title,Configuraciones de Inalámbrico Avanzadas
+alg.1,Configuración del Gateway Nivel de Aplicación(ALG)
+alg.2,Nombre del servicio
+alg.3,Descripción
+alg.4,Recepción de email
+alg.5,Post Office Protocol, versión 3(POP3)
+alg.6,Protocolo de Transferencia de Mensaje Simple(SMTP)
+alg.7,Medio de Transmisión
+alg.8,Protocolo de Transporte en Tiempo Real(RTP)
+alg.9,Protocolo de Transmisión en Tiempo Real(RTSP)
+alg.10,Protocolo del Servidor de Media de Microsoft(WMP/MMS)
+alg.11,Medio-VolP de Transmisión
+alg.12,Protocolo de Inicio de Sesión
+alg.13,NetMeeting(H.323)
+alg.14,Transferencia de Archivo
+alg.15,Protocolo de Transferencia de Archivo(FTP)
+alg.16,Protocolo de Transferencia de Archivo Trivial(TFTP)
+alg.17,Control Remoto(via WAN)
+alg.18,TELNET
+alg.19,Mensajería Instantánea
+alg.20,MSN messenger
+alg.21,IPSec
+alg.desc,La configuración ALG permite a los usuarios deshabilitar algún servicio de aplicación.
+alg.title,Configuración del Gateway Nivel de Aplicación(ALG)
+adm.node.ipv6.status,Estado de IPv6
+ipv6.status.connection.type,Tipo de Conexión
+ipv6.status.default.gateway,Gateway Predeterminado
+ipv6.status.desc,El estado IPv6 del dispositivo.
+ipv6.status.dns,AJUSTES IPv6 DNS
+ipv6.status.internet.config,Configuraciones de Internet IPv6
+ipv6.status.network,Estado de red
+adm.node.devicemode,Modo del dispositivo
+device.desc,Seleccione el modo en el que desearía que funcione el dispositivo y haga clic en Apply (aplicar) para guardar los cambios.
+device.router.desc,Este es el modo por defecto del dispositivo. La función principal de este modo consiste en ofrecer conectividad Internet wireless y por cable mediante el uso de una sola dirección IP de Internet compartida. En este modo están disponibles funciones como redireccionamiento de puertos, DMZ, controles parentales, programación, red de invitados y otros controles de acceso. Este es el modo recomendado.
+device.bridge.desc,La función de este modo consiste en ampliar la conectividad wireless a múltiples dispositivos cliente Ethernet por cable. Este modo se suele utilizar para un home cinema / centro multimedia, en el que los múltiples dispositivos de red requieren conectividad a Internet o de red, como una televisión inteligente HD, una consola de juegos, un descodificador o un DVR. El dispositivo comenzará por establecer la conectividad (como un dispositivo cliente wireless habilitado, por ejemplo una computadora portátil o un teléfono celular) con su red wireless (por lo general, facilitada por un router wireless o punto de acceso) y puentear la conectividad de su red con los dispositivos cliente cableados mediante los cuatro puertos LAN del switch (1-4). Tras seleccionar y aplicar este modo, haga clic en Basic > Wireless > Site Survey (Básico > Wireless > Inspección del sitio) para explorar la red wireless para conectarse, e indique la clave de seguridad wireless (si se requiere) para establecer la conectividad con su red. Una vez que haya configurado con éxito el dispositivo para que se conecte a su red wireless, podrá conectar el dispositivo en la zona en la que desee puentear la conectividad de red con los dispositivos cliente cableados mediante los cuatro puertos LAN del switch (1-4). En este modo, el dispositivo solamente puede conectarse a una banda cada vez (2.4 GHz o 5 GHz) y no facilitará ninguna de las funciones de control de acceso que se ofrecen en el modo router.
+device.router,Router
+device.bridge,Puente del cliente
+ipv6.status.network.prefix,Prefijo de red
+ipv6.desc,Póngase en contacto con su proveedor de servicios de Internet si admite IPv6.
+an.1,UPnP
+an.2,Ping WAN
+an.3,Respuesta de Ping WAN
+an.desc,Si no conoces bien estas configuraciones Avanzadas de Red, debes leer en la sección de ayuda antes de intentar modificarlas.
+an.title,Red Avanzada
+basic.4,SSID Múltiple
+basic.5,Encendido/Apagado de Radio
+basic.6,Modo 802.11n
+basic.8,Nombre de la Red de Difusión(SSID)
+basic.9,Frecuencia(Canal)
+basic.10,Sistema de Distribución de Inalámbrica(WDS)
+basic.11,Dirección MAC AP
+basic.12,Dirección MAC semejante
+basic.13,Estado Enlace
+basic.14,Modo Físico HT
+basic.15,Ancho de Banda del Canal
+basic.16,MCS
+basic.band,Ancho de banda inalámbrico
+basic.desc,Puedes configurar el mínimo número de funciones inalámbricas para comunicación, tales como Nombre de Red(SSID)y Canal. El Punto de Acceso puede ser configurado simplemente con el mínimo de elementos de configuración.
+basic.title,Configuraciones Básicas de Inalámbrico
+dcl.1,Clientes DHCP
+dcl.2,Nombre de host
+dcl.5,Expira en
+dcl.6,Red
+dcl.7,Caducado
+dcl.8,invitado
+dcl.9,Interna
+dcl.desc,Puedes aquí monitorear clientes DHCP.
+dcl.title,Lista de Cliente DHCP
+dmz.1,Dirección IP de DMZ
+dmz.desc,Usted puede configurar una zona desmilitarizada(DMZ)para separar la red interna e Internet.
+dmz.title,Configuraciones de DMZ
+dos.desc,Esta sección le permite habilitar la prevención de ataques por denegación de servicio (DoS), lo cual ofrece una protección adicional para su red. La habilitación de la prevención DoS contribuye a prevenir ataques como saturación SYN, saturación ICMP y análisis furtivo de puertos por parte de intrusos.
+dos.title,Prevención de DoS
+ebd.wifi.1,Inalámbrico  11ac
+ebd.wifi.2,Inalámbrico 11n
+ebd.wifi.3,Desconocido
+ebd.wps.1,Configura WPS
+ebd.wps.2,Configuración WPS
+ebd.wps.3,Resumen de WPS
+ebd.wps.4,Estado Actual de WPS
+ebd.wps.5,Inicie WPS procesamiento ...
+ebd.wps.6,Logrado
+ebd.wps.7,Error debido al error en el intercambio de información WPS!
+ebd.wps.8,Error debido WPS por haber excedido el tiempo!
+ebd.wps.9,Error debido a la superposición de sesión WPS!
+ebd.wps.10,Init
+ebd.wps.11,Inicie el registro ...
+ebd.wps.12,Conseguido…
+ebd.wps.13,No se pudo ...
+ebd.wps.14,Error(tiempo de espero) ...
+ebd.wps.15,Error(superposición PBC) ...
+ebd.wps.16,Búsqueda de un punto de acceso PBC
+ebd.wps.17,Asociación con el punto de acceso
+ebd.wps.18,Modo corriente WPS
+ebd.wps.19,Estación
+ebd.wps.20,AP desconfigurado
+ebd.wps.21,AP con registro  integrado
+ebd.wps.22,Proxing
+ebd.wps.23,Estación desactivado
+ebd.wps.24,AP Desactivado
+ebd.wps.25,Configurar por registro externo
+ebd.wps.26,Lista WPS AP
+ebd.wps.27,Acción WPS
+ebd.wps.28,Registro
+ebd.wps.29,ConfigAp
+ebd.wps.30,GetAPConfig
+ebd.wps.31,SSID actual
+ebd.wps.32,Tipo de autenticación actual
+ebd.wps.33,Abre
+ebd.wps.34,WPA2-PSK
+ebd.wps.35,WPA/WPA2-PSK
+ebd.wps.36,Tipo de cifrado actual
+ebd.wps.37,AES
+ebd.wps.38,TKIP+AES
+ebd.wps.39,PSK actual
+ebd.wps.40,La contraseña WPA es
+ebd.wps.41,Tipo de autenticación
+ebd.wps.42,Abre
+ebd.wps.43,Tipo de Encriptado
+ebd.wps.44,contraseña WPA
+ebd.wps.45,Guardar registro de datos
+ebd.wps.46,Volver a OOB
+ebd.wps.47,Dispositivo PIN
+ebd.wps.48,Método WPS
+ebd.wps.49,PBC
+ebd.wps.50,PIN
+ebd.wps.51,Si el PIN está activada, configure el PIN
+ebd.wps.52,por WPS AP o registro.
+ebd.wps.53,PIN Estación
+ebd.wps.54,Nota: Vacíe para el método PBC.
+ebd.wps.55,Estación MAC autorizado
+ebd.wps.56,PIN AP
+ebd.wps.57,Último registro MAC
+ebd.wps.58,Nombre del último registro
+ebd.wps.59,Error registro PIN Estación(primera mitad)
+ebd.wps.60,ataque duro a un usuario fuera de línea
+ebd.wps.61,Eavesdroppe  registro
+ebd.wps.62,Error registro PIN Estación(segunda mitad), atención a
+ebd.wps.63,ataque duro a un usuario fuera de línea(Eavesdroppe  registro)
+ebd.wps.64,Por favor, introduzca la nueva estación PIN
+ebd.wps.65,en ambos AP y la estación
+ebd.wps.66,ATAQUE DE ADVERTENCIA
+file.share.desc,Iniciar servidor SAMBA para compartir USB filas.
+file.share.description,Descripción
+file.share.ftp,Datos del servidor FTP
+file.share.readonly,Sólo lectura
+file.share.readwrite,Lee / Escribe
+file.share.server.name,Nombre de servidor
+file.share.server.status,Estado servidor
+file.share.smb,Información Servidor SAMBA
+file.share.title,Compartir filas
+file.share.user.list,Lista de cuentas de usuario
+file.share.workgroup,Grupo de trabajo
+file.share.dms,Información DLNA Servidor
+filter.desc,Paquetes filtro de LAN dispositivos cu direcciones MAC especificadas.
+filter.lan.mac.filter,Filtros LAN MAC
+filter.lan.mac.filter.mode,Modo de filtro LAN MAC
+filter.title,Filtros MAC
+guest.1,Puente de red
+guest.2,Isolación LAN
+guest.2,Acceso a Internet únicamente
+guest.3,Invitado de la red
+guest.desc,Esta página le permite configurar la red de invitados.
+guest.title,Invitado de la red
+ip.address.error,Dirección IP no válida! Por favor, introduzca una dirección IP válida.
+ip.not.in.lan.error,Dirección IP no coincide con la subred LAN.
+ipv6.1,Configuración IPv6 WAN
+ipv6.2,Prefijo red WAN
+ipv6.3,Configuración LAN IPv6
+ipv6.4,Modo
+ipv6.5,Solamente de 6 a 4
+ipv6.6,Solamente IPv6 nativo
+ipv6.7,6a4+IPv6 Nativo
+ipv6.8,Prefijo red LAN
+ipv6.9,Servidor DNS
+ipv6.10,ID subnet 6 a 4
+ipv6.alert.1,Por favor, introduzca el ID correcto de subred entre 0 y 65535
+ipv6.status.guest,Configuraciones de red de invitados IPv6
+ipv6.status.internal,Configuraciones de red interna IPv6
+ipv6.status.title,IPv6 Estado
+ipv6.title,Configuraciones IPv6
+lan.1,Configuración de Interfaz LAN
+lan.6,Configuración del Servidor DHCP
+lan.7,Servidor DHCP
+lan.8,IP de Inicio del DHCP
+lan.9,IP de cierre del DHCP
+lan.10,Período del Contrato del DHCP
+lan.11,(segundos)
+lan.12,Redes configuradas
+lan.13,Lista de Reservas del DHCP
+lan.14,DNS primario
+lan.15,DNS secundario
+lan.alert.11,Dirección IP y configuración de máscara de subred incorrectas.
+lan.alert.14,El IP de Inicio del DHCP debe ser menor que el de Cierre!
+lan.alert.16,No puedes configurar una dirección IP de LAN en el conjunto DHCP.
+lan.alert.17,El Período del Contrato del DHCP no es un valor entero!
+lan.alert.18,Tiempo de cierre DHCP debe ser de 60 ~ 604800!
+lan.alert.19,La red interna y la red de invitados no pueden estar en la misma subred.
+lan.alert.20,La dirección IP de reserva debe estar en el intervalo de direcciones IP del DHCP.
+lan.alert.21,Este nombre de host ya aparece en otra regla.
+lan.alert.22,Esta Dirección IP ya fue definido en otra norma.
+lan.alert.23,Esta Dirección MAC ya fue definida en otra norma.
+lan.alert.24,Esta URL ya fue definida en otra norma.
+lan.alert.26,MAC Filter: Allowed MAC is empty.
+lan.desc,Esta página le permite configurar la red LAN del router.
+lan.desc.psta,Esta sección le permite modificar la configuración de la dirección IP del router.
+lan.title,Configuración de la Red de Área Local(LAN)
+vlan.title,Configuración de la Red de Área Local(VLAN)
+vlan.desc,Esta página le permite configurar la VLAN del router.
+vlan.id,VID
+vlan.portnum,Número de puerto
+vlan.internet,Puerto WAN
+vlan.port,Puerto
+vlan.untag,No marcado
+vlan.tag,Marcado
+vlan.exclude,Excluido
+vlan.1,Configuración de interfaz LAN virtual
+vlan.internet.title,Configuración de Internet por defecto
+add,Agregar
+edit,Modificar
+remove,Eliminar
+vlan.list,Lista de VLAN
+member,Miembro
+vlan.alert.1,El ID VLAN de Internet por defecto no debe estar vacío.
+vlan.alert.2,El ID VLAN debe ser un número entero.
+vlan.alert.3,El ID VLAN solamente acepta números entre 3 y 4094.
+vlan.alert.4,Este ID ya está en uso.
+vlan.alert.5,El número máximo de VLAN es 5.
+vlan.alert.6,Solamente se puede asignar un puerto a un ID VLAN cuando no está marcado.
+mac.address.error,Dirección MAC no válida! Por favor, introduzca una dirección MAC válida.
+mg.1,Configuraciones del Administrador
+mg.2,Cuenta
+mg.3,Contraseña
+mg.4,(Longitud Máxima: 16 caracteres)
+mg.5,Tiempo de Espera
+mg.6,(120-3600 segundos)
+mg.7,Configuraciones de Nombre del Dispositivo
+mg.8,Nombre del Dispositivo
+mg.9,Configuraciones de DDNS
+mg.10,Proveedor dinámico de DNS
+mg.11,Nombre de Host
+mg.12,Cuenta
+mg.13,Contraseña
+mg.14,Manejo Remoto
+mg.15,Control Remoto(via WAN)
+mg.17,Configuraciones de URL del Dispositivo
+mg.18,URL del Dispositivo
+mg.19,Mail Exchange (Optional)
+mg.20,Backup MX
+mg.alert.1,Especifica cuenta, contraseña y DDNS.
+mg.alert.2,El Nombre de Host sólo acepta caracteres [0-9a-zA-Z_-]
+mg.alert.3,La cuenta contiene caracteres no válidos.
+mg.alert.4,La contraseña tiene caracteres no válidos.
+mg.alert.5,El Nombre de Dispositivo sólo acepta caracteres [0-9a-zA-Z_-]
+mg.alert.6,El Tiempo de Inactividad debe ser mayor de 120 segundos y menor de 3600.
+mg.alert.7,Para la Contraseña del Admin sólo se aceptan caracteres alfanuméricos.
+mg.alert.8,La Cuenta no debe estar vacía!
+mg.alert.9,La Cuenta sólo acepta caracteres [0-9a-zA-Z_-]
+mg.alert.11,El valor del puerto Remoto debe ser un número entero(1~65535).
+mg.alert.12,Especifica URL del Dispositivo.
+mg.alert.13,La URL del Dispositivo sólo acepta caracteres [0-9a-zA-Z_-]
+mg.alert.14,El Intervalo de Tiempo de espera debe ser un entero!
+mg.alert.15,Más de 256 palabras DDNS.
+mg.desc,Esta sección le permite cambiar su contraseña de administrador, configurar y activar la DNS dinámica, y habilitar la administración remota para permitir el acceso a su router desde Internet. Dado que la mayoría de los proveedores de servicios cambian constantemente la dirección IP de su casa, la facilitación del acceso a dispositivos la red de área local de su casa o pequeña oficina (como las cámaras IP) desde Internet requiere configurar un servicio de DNS dinámico e indicar los parámetros que correspondan en esta zona de administración. Los servicios de DNS dinámico permiten que su router confirme su ubicación al servicio de DNS dinámico, con lo cual se posibilita que el servicio de DNS dinámico asigne una dirección IP virtual fija a su red. Esto significa que aunque su proveedor de servicios de Internet cambie continuamente su dirección IP, el servicio de DNS dinámico podrá identificar su red utilizando una dirección fija.
+mg.desc.psta,Esta sección le permite cambiar su contraseña de administrador.
+mg.title,Gerenciamiento del Sistema
+net.node.dhcp,Lista de Cliente DHCP
+net.node.ipv6,Configuración IPv6
+net.node.lan,Configuración de LAN
+net.node.vlan,Configuración de VLAN
+net.node.qos,QoS
+net.node.wan,Configuración de WAN
+port.error,Por favor, introduzca el puerto correcto entre 0 y 65535
+qos.1,Configuración Qos
+qos.2,Activar Qos
+qos.3,Priorizar ACK(reconocimiento)
+qos.4,Priorizar ICMP(protocolo de mensajes de control de Internet)
+qos.5,Configuración clase de tráfico
+qos.6,Clase de tráfico predeterminado
+qos.7,Configuración categoria entrante
+qos.8,Categoria entrante(Entrada BW máximo %)
+qos.9,Entrada BW(anchura de banda)max.
+qos.10,Configuración clase de salida
+qos.11,Clases de salida(% Salida BW Max)
+qos.12,Salida BW max
+qos.13,Añadir regla QoS
+qos.14,Regla  de adicción QoS(QoS=qualidad del servicio)(Salida)
+qos.15,Filtro de dirección IP / MAC
+qos.16,IP de Destino
+qos.17,Origen IP
+qos.18,origen MAC
+qos.19,Dirección
+qos.20,Filtre protocol
+qos.21,TCP/UDP
+qos.22,Filtro del puerto
+qos.23,Puerto de Destino
+qos.24, Puerto de Origen
+qos.25,Origen o destinación
+qos.26,Lista de puertos
+qos.27,Clase asignada
+qos.28,Descripción
+qos.29,Regla  de adicción
+qos.30,Lista de reglas Qos
+qos.31,Nº de regla
+qos.32,Tipo de dirección
+qos.33,Dirección
+qos.34,Protocolo
+qos.35,Filtro del puerto
+qos.36,Número de puerto
+qos.37,Clase
+qos.38,Descripción
+qos.39,Origen
+qos.40,Destino u origen
+qos.41,Lo más alto
+qos.42,Alto
+qos.43,Medio
+qos.44,Bajo
+qos.45,Más bajo
+qos.46,Eliminar regla
+qos.47,Modificar regla
+qos.48,Modificar regla QoS
+qos.49,Modificar regla QoS (de salida)
+qos.submit.edit,Procesar modificación
+qos.reset.edit,Restablecer modificación
+qos.alert.1,Por favor, selecciona UNA regla para editar el timepo.
+qos.alert.2,La suma de todos BWMin% no puede ser más de 100!
+qos.alert.3,Por favor, introduzca un número!
+qos.alert.4,Es un número no válido!
+qos.alert.5,Número no válido, el número debe ser más que 0 y menos de 100!
+qos.alert.6,Número no válido, está fuera de rango
+qos.alert.7,Número no válido, el BWMin% no deben ser más de BWMax%!
+qos.alert.8,No hay ninguna regla activada. Por favor revise las reglas que desea eliminar.
+qos.alert.9,Puertos no válidos! Por favor, introduzca Puertos válidas, el formato correcto es
+qos.alert.10,La descripción solamente admite caracteres [0-9a-zA-Z_-].
+qos.alert.11,La suma de todos BW% no puede ser más de 100!
+qos.desc,Esta página le permite configurar la función de QoS.
+qos.title,Configuraciones de Calidad del Servicio
+range.desc,Eso puede abrir varios puertos o un rango de puertos en el router. Los formatos que incluyen un solo puerto(por ejemplo: 80), rangos de puertos(por ejemplo: 50-60).
+range.func,Función de juegos
+range.rules,Reglas de juego
+range.tcp.ports,Puertos TCP
+range.title,Juegos
+range.udp.ports,Puertos UDP
+route.desc,La opción de Enrutamiento Estático te permite definir rutas fijas para destinos específicos.
+route.lan.static.route,Rutas estáticas LAN
+route.routing.table,Tabla de Enrutamiento
+route.title,Configuración de ruta estática
+route.wan.static.route,Rutas estáticas WAN
+routing.alert.1,Por favor, introduzca un valor de Metric entre 1 y 15.
+routing.alert.2,Dirección IP tiene caracteres no válidos
+routing.alert.3,Dirección IP sólo acepta caracteres [0-9.]
+routing.alert.4,Formato de dirección IP incorrecto!
+schedule.alert.1,Debe seleccionar al menos un día.
+schedule.alert.3,No se puede permitir lo mismo nombre de la regla.
+schedule.alert.2,Nombre de la Lista está vacía.
+schedule.alert.4,Hora de inicio debe ser anterior a la hora de finalización.
+schedule.desc,Define normas planificadas para varias funciones de firewall.
+schedule.rule.name,Nombre de Norma
+schedule.rules,Normas de Planificación
+schedule.start.end,Inicio - Fin
+schedule.title,Planificación
+security.1,Versión de Firmware
+security.2,Autentificación 802.11
+security.3,Autentificación 802.11X
+security.4,WPA
+security.5,WPA-PSK
+security.6,WPA2
+security.7,WPA2-PSK
+security.8,BRCM-PSK
+security.9,Autenticación previa WPA2
+security.10,WAPI
+security.11,WAPI-PSK
+security.12,Encriptación WEP
+security.13,Encriptación WPA
+security.14,Servidor WAPI AS
+security.15,Puerto WAPI AS
+security.16,Servidor RADIUS
+security.17,Puerto RADIUS
+security.18,Clave RADIUS
+security.19,Contraseña WAP
+security.20,Clave de red
+security.21,Clave de red actual
+security.22,Intervalo de rotación de clave de red
+security.23,Intervalo recodificación transmisión con dirección especifica WAPI
+security.24,Intervalo recodificación transmisión multiple WAPI
+security.25,Interval de reautorización de red
+security.26,NAS depuración
+security.30,Estado de certificación
+security.31,Certificado instalacción
+security.32,ASU Certificado archivo
+security.33,Archivo certificado de usuario
+security.34,Certificado instalacción X.509
+security.35,Regulación de la Seguridad
+security.36,WEP
+security.37,WPA
+security.38,Encriptación WAPI
+security.39,Contraseña WAPI
+security.40,Servidor de Radius
+security.41,Modo Filtro
+security.42,WPA2-PSK compuesto
+security.43,WPA compuesto
+security.44,Lista de Filtros MAC
+security.alert.1,Contraseña WPA no válida: No es un dígito hexadecimal.
+security.alert.2,Contraseña WPA no válida: debe tener entre 8 y 63 caracteres ASCII o 64 dígitos hexadecimales
+security.alert.3,Clave de red no válido. No hay un dígito hexadecimal.
+security.alert.4,Clave de red no válido: debe ser de 5 o 13 caracteres ASCII o 10 o 26 dígitos dígitos hexadecimales
+security.alert.5,Por favor, introduzca un valor entero.
+security.desc,Esta página le permite configurar la seguridad de las interfaces LAN inalámbricas.
+security.title,Seguridad
+single.port.1,Reglas del Servidor Virtual
+single.port.2,Puerto Público
+single.port.4,Puerto Privado
+single.port.desc,El Servidor Virtual puede definir un puerto público único para redireccionar hacia una IP y puerto internos.
+single.port.func,Funcción Virtual Server
+single.port.title,Reglas del Servidor Virtual
+sm.1,Exporta Configuraciones
+sm.2,Exporta
+sm.3,Configuraciones de Importación
+sm.4,Localización de archivo de ajustes.
+sm.5,Carga Predeterminados de Fábrica
+sm.6,Carga Predeterminado
+sm.7,Reinicio del Sistema
+sm.8,Reiniciar
+sm.alert.1,Erorr restauración configución, inténtalo de nuevo.
+sm.desc,Usted puede guardar la configuración del sistema mediante su exportación a un archivo de configuración; restaurarlos mediante la importación del archivo, o restablecer los valores de fábrica.
+sm.title,Manejo de Ajustes
+stainfo.desc,Puedes aquí monitorear estaciones que se asociaron a esta AP.
+stainfo.title,Lista de Emisoras
+status.24g.wireless,2.4GHz Inalámbrico
+status.5g.wireless,5GHz Inalámbrico
+status.connect.type,Tipo de Conexión
+status.desc,Estado del dispositivo.
+status.desc.psta,Esta sección muestra los datos de sistema de su router.
+status.fw.version,Versión de Firmware
+status.internet.config,Configuraciones de Internet
+status.net.name.ssid,Nombre de la Red (SSID1)
+status.net.name.guest.ssid,Invitado SSID
+status.primary.dns,Servidor del Nombre del Dominio Primario
+status.second.dns,Servidor del Nombre del Dominio Secundario
+status.security.mode,Modo de Seguridad
+status.sys.up.time,Tiempo Operativo del Sistema
+status.system.info,Información del Sistema
+status.system.time,Horario del Sistema
+status.title,Estado
+status.wan.ip.address,Dirección IP de WAN
+syslg.1,Log del Sistema
+syslg.2,Habilita un Log del Sistema
+syslg.3,Exporta Log
+syslg.alert.1,Renuncia:(No se logra crear una instancia XMLHTTP
+syslg.alert.2,Hubo un problema con la solicitud.
+syslg.desc,Esta página puede ser utilizada para mostrar el registro del sistema.
+syslg.title,Log del Sistema
+trigger.alert.1,El puerto Match Start debe ser menos que el Puerto Match End
+trigger.alert.2,El puerto Trigger Start debe ser menor que el puerto Trigger End
+trigger.desc,Reenviar automáticamente las conexiones.
+trigger.func,Función de Activador de Puerto
+trigger.match.range,Correspondencia rangos de puertos
+trigger.port.range,Disparar interval del puerto
+trigger.rules,Reglas de desecandenar puertos
+trigger.title,Activador de Puerto
+ts.1,Configuración de Horario
+ts.2,Horario del Sistema
+ts.3,Configuraciones de NTP
+ts.4,Habilita Servidor NTP
+ts.5,Servidor NTP
+ts.6,Selecciona Servidor NTP
+ts.7,Zona Horaria
+ts.8,Sincronización NTP
+ts.9,Configuraciones de Fecha y Hora
+ts.10,Fecha y Hora
+ts.alert.1,Selecciona un Servidor NTP.
+ts.alert.2,Especifica un valor para el intervalo de sincronización.
+ts.alert.3,Valor de sincronización NTP no válido.
+ts.alert.4,El valor de sincronización de NTP está fuera de rango.(1~300)
+ts.alert.5,El valor de sincronización de NTP no es un Entero!
+ts.alert.6,Configuración no válida de Mes y Día
+ts.desc,Puedes configurar tu hora y zona horaria.
+ts.gmt.1,(GMT-11:00) Midway Island, Samoa
+ts.gmt.2,(GMT-10:00) Hawaii
+ts.gmt.3,(GMT-09:00) Alaska
+ts.gmt.4,(GMT-08:00) Hora del Pacífico
+ts.gmt.5,(GMT-07:00) Hora de Montaña
+ts.gmt.6,(GMT-07:00) Arizona
+ts.gmt.7,(GMT-06:00) Hora del Centro
+ts.gmt.8,(GMT-06:00) Middle America
+ts.gmt.9,(GMT-05:00) Indiana(Este), Colombia
+ts.gmt.10,(GMT-05:00) Hora del Este
+ts.gmt.11,(GMT-04:00) Hora del Atlántico , Brazil West
+ts.gmt.12,(GMT-04:00) Bolivia, Venezuela
+ts.gmt.13,(GMT-03:00) Guyana
+ts.gmt.14,(GMT-03:00) Brazil East, Greenland
+ts.gmt.15,(GMT-02:00) Mid-Atlantic
+ts.gmt.16,(GMT-01:00) Azores Islands
+ts.gmt.17,(GMT) Gambia, Liberia, Marruecos
+ts.gmt.18,(GMT) Inglaterra
+ts.gmt.19,(GMT+01:00) República Checa, N
+ts.gmt.20,(GMT+01:00) Alemania
+ts.gmt.21,(GMT+01:00) Túnez
+ts.gmt.22,(GMT+02:00) Grecia, Ucrania, Turquía
+ts.gmt.23,(GMT+02:00) Sud Africa
+ts.gmt.24,(GMT+03:00) Iraq, Jordania, Kuwait
+ts.gmt.25,(GMT+03:00) Moscú horario de invierno
+ts.gmt.26,(GMT+04:00) Армения
+ts.gmt.27,(GMT+05:00) Пакистан, Rusia
+ts.gmt.28,(GMT+06:00) Bangladesh, Rusia
+ts.gmt.29,(GMT+07:00) Tailandia, Rusia
+ts.gmt.30,(GMT+08:00) China Coast, Hong Kong
+ts.gmt.31,(GMT+08:00) Taipei
+ts.gmt.32,(GMT+08:00) Singapur
+ts.gmt.33,(GMT+08:00) Australia(WA)
+ts.gmt.34,(GMT+09:00) Japón, Corea
+ts.gmt.35,(GMT+09:00) Korean
+ts.gmt.36,(GMT+10:00) Guam, Rusia
+ts.gmt.37,(GMT+10:00) Australia(QLD, TAS,NSW,ACT,VIC)
+ts.gmt.38,(GMT+11:00) Solomon Islands
+ts.gmt.39,(GMT+12:00) Fiji
+ts.gmt.40,(GMT+12:00) New Zealand
+ts.title,Ajustes de Horario
+uf.1,Carga el Firmware
+uf.2,Localización
+uf.alert.1,Actualización de Firmware: Debes especificar un archivo.
+uf.alert.2,Actualización del firmware fracasado, por favor, inténtalo de nuevo
+uf.desc,Actualizar el firmware para obtener nuevas funcionalidades. Se tarda aproximadamente 1 minuto para cargar &amp; actualizar flash y tener paciencia por favor. ¡Precaución! Una imagen dañada cierre el sistema.
+uf.title,Actualiza Firmware
+url,URL
+url.error.blank,URL no puede ser una cadena vacía.
+url.error.invalid.1,URL no puede incluir
+wan.access.concentrator,Acceso concentrador
+wan.address.expires.in,\"La dirección IP expira(IP=protocolo de Internet)/MAC protocolo de Internet\"
+wan.alert.4,El Nombre de Host sólo acepta caracteres [0-9a-zA-Z_-]
+wan.alert.6,La contraseña de PPPoE está vacía!
+wan.alert.7,El nombre de usuario de PPPoE está vacía!
+wan.alert.8,Por favor, introduzca el valor del tiempo máximo de inactividad entre 1 y 3600
+wan.alert.9,Por favor introduce el valor de MRU entre 128 y 16384
+wan.alert.10,Por favor introduce el valor de MTU entre 576 y 1492
+wan.alert.11,Por favor introduce el valor de MTU entre 576 y 1460
+wan.alert.18,La Dirección IP del Servidor PPTP tiene caracteres no válidos
+wan.alert.19,La Dirección IP del Servidor PPTP sólo acepta caracteres [0-9a-zA-Z_-]
+wan.alert.20,La Dirección IP del Servidor PPTP tiene formato incorrecto!
+wan.alert.21,El Nombre del Servidor PPTP tiene caracteres no válidos
+wan.alert.22,La contraseña del Servidor PPTP tiene caracteres no válidos
+wan.alert.23,La dirección IP de PPTP no está dentro de la subred de Gateway.
+wan.alert.24,El nombre de usuario de PPTP está vacía!
+wan.alert.25,La contraseña de PPTP está vacía!
+wan.alert.26,La Dirección IP del Servidor L2TP tiene caracteres no válidos
+wan.alert.27,La Dirección IP del Servidor L2TP sólo acepta caracteres [0-9a-zA-Z_-]
+wan.alert.28,La Dirección IP del Servidor L2TP tiene formato incorrecto!
+wan.alert.29,L2TP nombre de usuario está vacío!
+wan.alert.30,El Nombre del Servidor L2TP tiene caracteres no válidos
+wan.alert.31,la contraseña L2TP está vacía!
+wan.alert.32,La contraseña del Servidor L2TP tiene caracteres no válidos
+wan.conn.type,Tipo de Conexión
+wan.connect.type,Tipo de Conexión WAN
+wan.connection.status,Situación de conexión
+wan.demand.mode,Modo de demanda
+wan.desc,Puedes elegir diferentes tipos de conexión que se adapten a tu entorno. Además, puedes configurar parámetros de acuerdo al tipo de conexión seleccionada.
+wan.dhcp,DHCP
+wan.dhcp.settings,Configuración de DHCP
+wan.dns.servers,servidores  DNS
+wan.domain.name,Nombre del dominio
+wan.hostname,Nombre de Host(opcional)
+wan.ip.setting,Configuración IP de Interfaz WAN
+wan.keep.alive.mode,Modo Vigente
+wan.l2tp,L2TP
+wan.l2tp.server,Servidor L2TP
+wan.l2tp.setting,Configuración L2TP
+wan.max.idle.time,Tiempo máximo de inactividad
+wan.mru,MRU(unidad máxima de recepción)
+wan.mtu,MTU(unidad máxima de transmisión)
+wan.password,Contraseña
+wan.ppoe.setting,Configuración de PPPoE
+wan.pppoe,PPPoE
+wan.pptp,PPTP
+wan.pptp.server,Servidor PPTP
+wan.pptp.setting,Configuración de PPTP
+wan.protocol.phy.con,Protocolo de conexión física
+wan.service.name,Nombre del Servicio
+wan.static,ESTÁTICA
+wan.status,Estado WAN
+wan.title,Configuración de la Red de Área Ampliada(WAN)
+wan.user.name,Nombre de Usuario
+wireless.node.adv,Avanzada
+wireless.node.basic,Básico
+wireless.node.guest.net,Invitado de la red
+wireless.node.security,Seguridad
+wireless.node.wps,WPS
+wireless.sta.list,Lista de Emisoras
+wps.1,Wifi-Invite
+wps.2,Modo PIN Wifi
+wps.3,Lista STA(estación)con validación Wifi-Invitar
+wps.4,STAs(estación)con Wifi-Invite validación
+wps.5,Acción
+wps.6,Nombre descriptivo
+wps.desc,Esta página le permite configurar WPS.
+wps.title,WPS
+wz.title,Asistente de Configuración
+wz.desc,Puedes usar el Asistente de Configuración para configurar la conexión de tu ruteador a Internet, o para configurar tu red wireless y su seguridad.
+wz.1,Asistente de Instalación de la Conexión de Internet
+wz.2,El siguiente Asistente para Configuración con base en la Web está diseñado para ayudarte a conectar tu ruteador a Internet. Este Asistente de Configuración te guiará con instrucciones paso a paso acerca de cómo lograr tu conexión a internet instalada y funcionando. Presione el botón debajo para comenzar.
+wz.3,Pone en funcionamiento el Asistente de Instalación de la Conexión de Internet
+wz.4-1,Nota
+wz.4-2,Antes de poner en funcionamientos estos asistentes, tienes que asegurarte de haber seguido todos los pasos detallados en la Guía Rápida de Instalación en el paquete.
+wz.5,Asistente de Configuración de Seguridad de wireless
+wz.6,Para mayor seguridad de la red wireless del TEW-818DRU esta es pre-encriptada con su propia clave única seguridad de la red. Lance el Asistente de configuración de seguridad inalámbrica para cambiar la clave de cifrado existente.
+wz.7,Pone en funcionamiento el Asistente de Instalación de la Seguridad de wireless
+wz.8-1,Nota
+wz.8-2,Algunos de los cambios realizados mediante este Asistente de Configuración, pueden requerir que cambies alguno de los ajustes en los adaptadores de los clientes de wireless para que puedan seguir conectándose con el ruteador.
+wi.1,Bienvenido al Asistente de Configuración de Conexión a Internet
+wi.2,Este asistente te guiará paso a paso por el proceso para configurar tu ruteador y conectarte a Internet.
+wi.3,Paso 1: Selecciona tu Tipo de Conexión a Internet
+wi.4,Paso 2: Configura tu Conexión a Internet
+wi.4-1,Paso 2: Define una Conexión de Dirección IP Estática
+wi.4-2,Paso 2: Conexión DHCP(Dirección IP Dinámica)
+wi.4-3,Paso 2: Define Nombre de Usuario y Contraseña para la Conexión(PPPoE)
+wi.4-4,Paso 2: Define Nombre de Usuario y Contraseña para la Conexión(l2TP)
+wi.4-5,Paso 2: Define Nombre de Usuario y Contraseña para la Conexión(PPTP)
+wi.5,Paso 3: Guarda las Definiciones y Conecta
+wi.6,Selecciona el tipo de conexión a Internet debajo:
+wi.7,Conexión de Dirección IP Estática
+wi.8,Selecciona esta opción si tu Proveedor de Instalación de Internet te brindó información sobre la Dirección IP que debe ser configurada en forma manual
+wi.9,Conexión DHCP(Dirección IP Dinámica)
+wi.10,Selecciona esto si tu conexión a internet te brinda automáticamente una Dirección IP.  La mayoría de proveedores de servicios de Internet por cable utilizan este tipo de conexión.
+wi.11,Nombre de Usuario / Contraseña de Conexión(PPPoE)
+wi.12,Selecciona esta opción si tu conexión a internet requiere nombre de usuario y palabra clave.  La mayoría de proveedores de servicios de Internet por DSL utilizan este tipo de conexión.
+wi.13,Nombre de Usuario / Contraseña de Conexión(L2TP)
+wi.14,Cliente L2TP
+wi.15,Nombre de Usuario / Contraseña de Conexión(PPTP)
+wi.16,Cliente PPTP.
+wi.17,Para poder configurar esta conexión, es necesario que tengas una lista completa de información IP que te sea entregada por tu Proveedor de Servicio de Internet. Si tienes una conexión IP Estática y no tienes esta información, debes contactarte con tu ISP.
+wi.18,Dirección IP
+wi.19,Máscara de Subred
+wi.20,Gateway Predeterminado
+wi.21,Servidor DNS Primario
+wi.22,Servidor DNS Secundario
+wi.23,Para establecer la conexión DHCP, asegúrese de que esté conectado al enrutador desde el PC que inicialmente estaba conectado por banda ancha. Después copie la dirección MAC de su equipo al enrutador.
+wi.24,Para configurar una conexión DHCP, necesitas también un Nombre de Host. Si no lo tienes o no lo conoces, debes contactar a tu ISP.
+wi.25,Dirección MAC
+wi.26,(opcional)
+wi.27,Clona la Dirección MAC de tu PC
+wi.28,Nombre de Host
+wi.29,Para configurar esta conexión, es necesario que tu Proveedor de Servicio de Internet te brinde un Nombre de Usuario y una Contraseña. Si no tienes esta información, debes contactar a tu ISP.
+wi.30,nombre del usuario.
+wi.31,Contraseña
+wi.32,verificación de contraseña
+wi.33,Para configurar esta conexión, es necesario que tu Proveedor de Servicio de Internet te brinde un Nombre de Usuario y una Contraseña. También necesitas dirección IP para L2TP. Si no tienes esta información, debes contactar a tu ISP.
+wi.34,Dirección IP del Servidor L2TP
+wi.35,(probablemente el mismo gateway)
+wi.36,Tipo de IP de Interfaz WAN
+wi.37,IP Estática
+wi.38,IP Dinámico
+wi.39,Para configurar esta conexión, es necesario que tu Proveedor de Servicio de Internet te brinde un Nombre de Usuario y una Contraseña. También necesitas dirección IP para PPTP. Si no tienes esta información, debes contactar a tu ISP.
+wi.40,Dirección IP del Servidor PPTP
+wi.42,Configuración completa
+wi.43,El Asistente para la Conexión a Internet se ha completado. Presione el botón Aplicar para guardar y aplicar las configuraciones.
+wi.44,Tipo de Conexión de Internet
+wi.alert.1,Selecciona una opción de tipo de conexión.
+wi.alert.2,Tipo de Conexión a Internet Desconocido, chequea nuevamente.
+ww.1,Bienvenido al Asistente de Seguridad de wireless
+ww.2,Este asistente de configuración te guiará con instrucciones paso a paso acerca de cómo configurar tu red wireless y cómo hacerla segura.
+ww.3,Paso 1: Nombra tu Red wireless
+ww.4,Paso 2: Asegura tu Red wireless
+ww.5,Paso 3: Configura tu Contraseña de Seguridad wireless
+ww.6,Tu red wireless necesita un nombre para que pueda ser fácilmente reconocida por clientes de wireless. A fin de aumentar la seguridad, se recomienda cambiar el nombre pre-configurado de la red.
+ww.7,Nombre de wireless(SSID).
+ww.8,A fin de proteger tu red de hackers y usuarios no autorizados, se recomienda que elijas una de las siguientes configuraciones de seguridad de red wireless.
+ww.9,Hay tres niveles de seguridad wireless: Bueno, Mejor y Óptimo. El nivel que elija dependerá de las funciones de seguridad que admitan sus adaptadores wireless.
+ww.10,EL MEJOR
+ww.11,Selecciona esta opción si tus adaptadores wireless SON COMPATIBLES CON WPA2
+ww.12,MEJOR QUE
+ww.13,Selecciona esta opción si tus adaptadores wireless SON COMPATIBLES CON WPA
+ww.14,BIEN
+ww.15,Selecciona esta opción si tus adaptadores wireless NO SON COMPATIBLES CON WPA
+ww.16,NINGUNO
+ww.17,Seleccione esta opción si no desea activar ninguna otra función de seguridad
+ww.18,Ha seleccionado su nivel de seguridad; deberá establecer una contraseña de seguridad inalámbrica.
+ww.19,Contraseña de Seguridad de wireless:
+ww.20,(5/13caracteres ASCII o 10/26 dígitos hexadecimales)
+ww.21,(8 a 64 caracteres)
+ww.22,Configuración completa
+ww.23,Debajo se muestra un resumen detallado de las configuraciones de seguridad de tu wireless. Debes imprimir esta página o copiar la información en un papel, de manera de poder configurar correctamente los adaptadores de cliente wireless.
+ww.24,Longitud de Clave WEP:
+ww.25,Clave WEP predeterminada para usar:
+ww.26,Autentificación:
+ww.27,Abre
+ww.28,Clave WEP
+ww.29,Encriptación:
+ww.30,WPA2-PSK/AES(también conocido como WPA Personal)
+ww.31,Clave Pre-Compartida
+ww.32,WPA2-PSK/AES(también conocido como WPA2 Personal)
+ww.alert.1,El campo SSID no puede quedar en blanco!
+ww.alert.2,Selecciona una opción de seguridad.
+ww.alert.3,La Contraseña de Seguridad de wireless debe tener por lo menos 8 caracterers.
+ww.alert.4,Introduce 64 caracteres Hex para la Clave WPA-PSK!
+ww.alert.5,La contraseña de WEP posee caracteres no válidos.
+ww.alert.6,La contraseña WEP debe contener 26 dígitos hexadecimales. La contraseña debe constar únicamente de caracteres [0-9a-fA-F].
+ww.alert.7,El SSID contiene caracteres no válidos.
+wz.confirm.1,¿Estás seguro que quieres salir de este asistente?
+wz.confirm.2,No se aplicará ningún cambio a su dispositivo hasta que el asistente de configuración haya terminado el proceso. ¿Seguro que desea salir del asistente?
+wz.confirm.3,Guardar y aplicar los cambios?
+prev,anterior
+next,Siguiente
+connect,Conecta
+disconnect,Desconectado
+jan,Enero
+feb,Feb
+mar,Marzo
+apr,Abr
+may,Mayo
+jun,Junio
+jul,Julio
+aug,Agosto
+sep,Setiembre
+oct,Oct
+nov,Nov
+dec,Diciembre
+guest,invitado
+always,Siempre
+readonly,Sólo lectura
+readwrite,Lee / Escribe
+file.share.note.1,Nota: La contraseña predeterminada del administrador es la misma que la del router de gestión de entrada por defecto contraseña.
+file.share.ftp.remote,de acceso remoto
+file.share.ftp.codepage,Restablece(Página de códigos)
+codepage.0,Europa occidental
+codepage.1,Europa Central
+codepage.2,Griego
+codepage.3,Cirílico
+codepage.4,Japonés
+codepage.5,Corea
+codepage.6,Chino tradicional
+codepage.7,Chino simplificado
+codepage.8,Tailandés
+codepage.9,Árabe
+ebd.wps.67,DETENER WPS
+ebd.wps.68,PBC de nuevo
+ebd.wps.69,Agregar afiliado
+clicktodispay,Haga clic aquí para mostrar
+um.js.1,Error. la dirección IP está vacía.
+um.js.2,Debe ser un número [0-9].
+um.js.3,Error de formato de la dirección IP.
+um.js.4,Error de formato de la dirección de máscara.
+um.js.5,Configuración no válida de la dirección IP. El último octeto de la dirección IP debe estar entre 0 y 255.
+um.js.6, es una dirección IP local.
+um.js.7, es una dirección IP de transmisión
+um.js.8, es una dirección de red Clase A.
+um.js.9, es una dirección de transmisión de Clase A
+um.js.10, es una dirección de red Clase B.
+um.js.11, es una dirección de transmisión de Clase B.
+um.js.12, es una dirección de red Clase C.
+um.js.13, es una dirección de transmisión de Clase A
+um.js.14, es una dirección IP Clase D.
+um.js.15, es una dirección IP Clase E.
+um.js.16,Configuración no válida de la dirección IP. Introduzca una dirección IP válida de host dentro de la red o subredes IP definidas por la máscara de subred, o modifique la máscara de subred como corresponda.
+um.js.17,Configuración no válida de la dirección IP. Introduzca una dirección IP válida de host dentro de la red o subredes IP definidas por la máscara de subred, o modifique la máscara de subred como corresponda.
+um.js.18,Error. la dirección MAC está vacía.
+func.js.1,Procesando, por favor espere.....
+um.js.19,La longitud de SSID no debe ser mayor a 32 caracteres!
+um.js.20,Introduzca 64 caracteres hexadecimales para la clave precompartida
+um.js.21,La frase clave debe contener entre 8 y 63 caracteres ASCII.
+func.js.2,Reiniciando, por favor espere.....
+func.js.3,Archivo de firmware no válido. No se puede actualizar el firmware. El router se reiniciará ahora para garantizar que el dispositivo vuelva a su funcionamiento normal.
+sm.confirm.1,¿Seguro que desea importar la configuración?
+sm.confirm.2,¿Estás seguro de la carga predeterminada de fábrica?
+sm.confirm.3,¿Estás seguro del reinicio del dispositivo ?
+uf.confirm.1,¿Estás seguro de la actualización del firmware?
+mg.16,Puerto Remoto
+routing.alert.5,El próximo salto no es alcanzable via interfaz de LAN!
+routing.alert.6,Configuración incorrecta de la ruta. Introduzca una dirección IP válida de red o subred, o una dirección válida de host pasarela dentro de la red IP definida por la máscara de subred. Como alternativa, modifique la máscara de subred como corresponda.
+routing.alert.7,La máscara de red no puede ser definida como \'255.255.255.255\' cuando la dirección de destino es una red!
+routing.alert.8,La máscara de red no puede ser definida como \'255.255.255.255\' cuando la dirección de destino es una red!
+url.error.invalid.2,La URL no puede incluir ninguno de los siguientes caracteres
+port.range.alert.1,El puerto inicial del TCP debe ser menor que su puerto final.
+port.range.alert.2,El puerto inicial del UDP debe ser menor que el puerto final del UDP.
+ssid.error,¡Caracteres no válidos en el SSID!
+wa.alert.1,Especifique el intervalo de señalización.
+wa.alert.2,Intervalo de Alertas no válido.
+wa.alert.3,Especifica el Intervalo DTIM.
+wa.alert.4,Intervalo DTIM no válido.
+wa.alert.5,Especifica la Longitud de Fragmentación.
+wa.alert.6,Largo de Fragmentación no válido.
+wa.alert.7,El valor del Umbral de Fragmento debe ser un entero!
+wa.alert.8,Especifica el Umbral RTS.
+wa.alert.9,Umbral RTS no válido.
+wa.alert.10,El valor del Umbral de RTS debe ser un entero!
+wa.alert.11,El Intervalo de Alertas debe ser un entero!
+wa.alert.12,El DTIM debe ser un entero!
+wa.alert.13,El valor del Umbral de Fragmento debe ser un entero!
+wa.alert.14,El Umbral RTS debe ser un entero!
+5gwa.3,(rango 20 - 1000, predeterminado 100)
+5gwa.5,(rango 1 - 255, predeterminado 3)
+5gwa.7,(rango 256 - 2346, predeterminado 2346)
+5gwa.9,(rango 1 - 2347, predeterminado 2347)
+security.alert.6,¡El intervalo de rotación debe ser un número entero!
+security.alert.7,¿Seguro que desea optar por WPS con seguridad abierta?
+security.alert.8,La WPS no admite autenticación compartida 802.11. Si opta por la autenticación compartida, se deshabilitará automáticamente la WPS.
+security.alert.9,La WPS solamente es compatible con seguridad WPA2-PSK o WPA2-PSK+WPA-PSK de modo mixto. Si deshabilita la difusión SSID, se deshabilitará la funcionalidad WPS. Haga clic en Aceptar para guardar los cambios o en Cancelar para cancelarlos.
+security.alert.10,La WPS no admite cifrado WPA de solo TKIP. Si opta por el cifrado WPA de solo TKIP, se deshabilitará automáticamente la WPS.
+security.alert.11,La WPS no admite cifrado WEP. Si opta por el cifrado WEP, se deshabilitará automáticamente la WPS.
+5gw.off,La Radio de Red wireless está APAGADA.
+bytes,Bytes
+wan.8,L2TP
+wan.9,PPTP
+ww.33,Seleccione qué interfaz wireless desea configurar:
+wan.alert.1,No se logra crear una instancia XMLHTTP
+wan.alert.2,No se logra obtener la dirección MAC.
+wan.alert.3,La dirección IP estática no está dentro de la subred de Gateway.
+wan.alert.12,La Dirección IP del Servidor L2TP tiene caracteres no válidos
+wan.alert.13,La Dirección IP del Servidor L2TP sólo acepta caracteres [0-9a-zA-Z_-]
+wan.alert.14,La Dirección IP del Servidor L2TP tiene formato incorrecto!
+wan.alert.15,El Nombre del Servidor L2TP tiene caracteres no válidos
+wan.alert.16,La contraseña del Servidor L2TP tiene caracteres no válidos
+wan.alert.33,La subred de la IP WAN no puede ser la misma que la subred de la IP LAN.
+wi.alert.4,El nombre de usuario de PPTP está vacía!
+use.legacy.rate,Tasa de uso preexistente
+minutes,min
+hours,Horas
+seconds,segundos
+time.format,Formato de tiempo
+wireless.24g,wireless(2.4GHz)
+wireless.5g,wireless(5GHz)
+net.node,red
+wizard.node,Asistente de Configuración
+adv.node,Avanzada
+adv.1,Advanced Wireless
+port.range.alert.3,El número de puerto TCP ya está en uso. Asigne un número de puerto diferente.
+port.range.alert.4,El número de puerto UDP ya está en uso. Asigne un número de puerto diferente.
+port.error.2,El número de puerto público ya está en uso. Asigne un número de puerto diferente.
+access.alert.2,¡La IP inicial debe ser menor que la IP final!
+mac.address.error.1,Escriba una dirección MAC válida(p. ej. 00:11:22:33:44:55)
+ipv6.status.2,Conexión
+wan.dynamic,dinámico
+wi.node.1,Bienvenido
+wi.node.2,Tipo de Conexión
+wi.node.3,Configuración de la conexión
+wi.node.4,Terminado
+ww.node.1,Establecer SSID
+ww.node.2,Seleccionar seguridad
+ww.node.3,Establecer contraseña
+ww.wepkeylen.1,64 bit
+ww.wepkeylen.2,128 bit
+routing.alert.9,Esta entrada fue definida en la lista de ruta estática. Si quieres redefinirla debes 'borrar' previamente la que está en la lista de ruta estática!!
+file.share.alert.1,¡El nombre del servidor está en blanco!
+file.share.alert.2,El nombre del servidor solamente admite caracteres [0-9a-zA-Z_-].
+file.share.alert.3,¡El grupo de trabajo está en blanco!
+file.share.alert.4,El grupo de trabajo solamente admite caracteres [0-9a-zA-Z_-].
+file.share.alert.5,La descripción contiene caracteres no válidos
+file.share.alert.6,¡El identificador de usuario está en blanco!
+file.share.alert.7,El identificador de usuario solamente admite caracteres [0-9a-zA-Z_-].
+file.share.alert.8,¡La contraseña está en blanco!
+file.share.alert.9,Este nombre de usuario ya aparece en otra regla.
+ts.11,Horario de Verano
+ts.12,Habilita el Horario de Verano
+ts.13,Diferencia del horario de verano respecto a la hora normal
+ts.14,Fecha de Horario de Verano
+ts.15,Inicio DST
+ts.16,Cierre DST
+ipv6.status.1,6 a 4
+wps.confirm.1,¿Seguro que desea optar por WPS con seguridad abierta?
+wps.alert.1,¡Número de pin no válido!
+security.alert.12,¿Seguro que desea habilitar la WPS? Si habilita la WPS, el tipo de red SSID pasará a ser abierto.
+security.alert.13,Si deshabilita la difusión SSID, se deshabilitará la funcionalidad WPS. Haga clic en Aceptar para mantener el cambio o en Cancelar para anular el cambio.
+login.width,500px
+login.tag.1,Iniciar sesión
+login.tag.2,Login a TEW-818DRU
+login.tag.5,Restablece
+login.alert.1,Introduzca el identificador de usuario y la contraseña.
+login.alert.2,Nombre de Usuario y/o Contraseña equivocados!
+status.wepshared,WEP COMPARTIDO
+status.auto,WEP AUTO
+ww.confirm.1,Guardar y aplicar los cambios?
+wi.confirm.1,¿Estás seguro que quieres salir de este asistente?
+guest.4,Aislamiento de cliente wireless
+guest.5,(impedir que los invitados accedan a la red LAN privada)
+guest.6,(aislar a unos invitados de los otros)
+guest.7,Configuración avanzada de la red de invitados
+guest.8,Esta página le permite configurar los ajustes avanzados para la red de invitados del enrutador.
+guest.9,Configuración de la interfaz de la red de invitados
+guest.10,Planificación
+guest.11,Agregar horario
+fs.usb.1,Retirar dispositivo con seguridad
+fs.usb.2,Ya puede retirar el dispositivo del sistema con seguridad.
+fs.usb.3,No se puede retirar el dispositivo en este momento. Intente retirarlo más tarde.
+file.share.usb,Almacenamiento en USB
+file.share.usb.rm,Retirar dispositivo USB con seguridad
+file.share.usb.msgok,Ya puede retirar este dispositivo.
+file.share.usb.msgfail,No se puede retirar el dispositivo en este momento. Intente retirarlo más tarde.
+file.share.usb.devdesc,Descripción del dispositivo
+file.share.usb.readacce,Acceso para lectura
+file.share.usb.writeacce,Acceso para escritura
+file.share.usb.totalspace,Espacio total
+file.share.usb.freespace,Espacio libre
+file.share.usb.sharename,Compartir nombre
+file.share.usb.volumename,Nombre de volumen
+select.all,Seleccionar todos
+select.none,No seleccionar ninguno
+func.js.4,El dispositivo está aplicando los cambios y deberá reiniciarse; por favor, espere……
+func.js.5,El dispositivo está aplicando los cambios; por favor, espere……
+bottom.copyright,Copyright © 2014 TRENDnet. Todos los derechos reservados.
+bottom.product.registration,Registro de la garantía del producto
+basic,básica
+advanced,Avanzada
+basic.menu.networkstatus,Estado de red
+basic.menu.wireless,Wireless
+basic.menu.guestnetwork,Invitado de la red
+basic.menu.parental,control parental
+basic.status.internet,Internet
+basic.status.internet.connect,conectado a Internet
+basic.status.internet.noconnect,No hay conexión a Internet
+basic.status.guest.2.4g.ssid,SSID de invitados 2.4 GHz
+basic.status.guest.5g.ssid,SSID de invitados 5 GHz
+basic.status.usb.connected,Dispositivos USB conectados
+basic.status.usb.noconnected,No hay dispositivos USB conectados
+basic.status.noconnected,No hay dispositivos conectados
+basic.status.wireless.2.4g.ssid,2.4GHz SSID
+basic.status.wireless.5g.ssid,5GHz SSID
+basic.status.wireless.2.4g,2.4GHz
+basic.status.wireless.5g,5GHz
+basic.status.connected.devices,El dispositivo conectado
+basic.wireless.title,Configuraciones wirelesss
+basic.wireless.desc,Esta sección le permite configurar las opciones básicas requeridas para su red wireless principal, como su nombre de red wireless (SSID) y clave Wi-Fi. Haga clic en la lista desplegable "Select Wireless Band" (Seleccione banda wireless) para seleccionar la banda wireless que desee configurar. Con la función Smart Connect habilitada, las dos bandas de 5 GHz (5GHz<sup>1</sup> y 5GHz<sup>2</sup>) aparecerán como una banda de 5 GHz (5 GHz) y también se aplicarán a la configuración de red de invitados de 5 GHz y a la configuración wireless de 5 GHz en la sección avanzada. Con la función Smart Connect deshabilitada, las dos bandas de 5 GHz (5GHz<sup>1</sup> y 5GHz<sup>2</sup>) aparecerán por separado y podrán configurarse y funcionar independientemente.
+basic.wireless.2.4g,2.4GHz Red wireless
+basic.wireless.5g,5 GHz Red wireless AC
+basic.guest.2.4g,Zona de invitados 2.4 GHz
+basic.guest.5g,Zona de invitados 5 GHz
+basic.parental.urlfilter,filtro Web URL
+basic.parental.urlfilter.mode,modo filtro Web URL
+basic.parental.web,URL del sitio web
+basic.parental.ipfilter,Normas para filter IP
+basic.parental.ipfilter.mode,modo filtro IP
+basic.parental.iprange,Rango de Dirección IP
+basic.parental.macfilter,Filtros MAC
+basic.parental.macfilter.mode,modo filtro Mac
+basic.parental.interface,interfaz
+basic.parental.interface.lan,LAN
+basic.parental.interface.wlan,WLAN
+basic.parental.rule,Regla de control parental
+basic.parental.filter,Filtro
+basic.parental.filter.desc,Descripción del filtro
+basic.parental.filter.type,Tipo de filtro
+basic.parental.summary,Resumen de control parental
+active,Activo
+inactive,Inactivo
+adm.node.routerstatus,Estado del router
+setup,Configuración
+wireless.node.multissid,SSID Múltiple
+wireless.node.wds,WDS
+security,Seguridad
+firewall,Firewall
+adv.node.virtual.rules,Reglas del Servidor Virtual
+usb,USB
+usb.node.samba,Servidor SAMBA
+usb.node.ftp,servidor FTP
+usb.node.mediaserver,servidor de medios
+usb.node.eject.device,Expulsar el Dispositivo
+setup.wizard,Asistente de Configuración
+advanced.wireless.title,Configuraciones wirelesss
+advanced.wireless.desc,El punto de acceso se puede configurar con solamente una cantidad mínima de preferencias (p. ej. nombre de red SSID y modo de seguridad).
+advanced.wireless.wds.desc,Esta página le permite configurar su sistema de distribución wireless (WDS) para las interfaces LAN wireless.
+advanced.usb.samba.desc,Permitir al SAMBA server compartir los ficheros en el almacenamiento de USB.
+advanced.usb.ftp.desc,Permitir al Ftp server compartir los ficheros en el almacenamiento de USB.
+advanced.usb.ms.desc,Configurar el servidor de medios.
+advanced.usb.device,dispositivo USB
+dialog.size,dialogbiger
+bg_main2.size,bg_main2_1.png
+bg_main2_overlay.size,bg_main2_overlay_1.png
+parental.desc,Las opciones de control parental le permiten fijar restricciones o filtros, en concreto quién puede acceder o no a su red durante un periodo especificado, y restricciones de ciertos contenidos web. Los filtros URL de web le permiten bloquear o restringir el acceso a sitios web específicos. Los filtros IP/MAC le permiten restringir el acceso a su red a computadoras y dispositivos cableados o wireless que usted especifique, mediante el uso de direcciones IP (p. ej. 192.168.10.x) o direcciones MAC (p. ej. a1:b2:c3:d4:e3:f5). Puede comprobar una dirección MAC o IP de las computadoras y los dispositivos actualmente conectados a su router desde la página <a href="../adm/clientstatus.asp">Advanced > Administrator > Client Status</a> (<a href="../adm/clientstatus.asp">Avanzadas > Administrador > Estatus de clientes</a>.
+ipv6.status.lan.address,Dirección LAN IPv6
+ipv6.status.lan.link.address,Dirección LAN IPv6 Link-Local
+block_wan.desc,El acceso a este sitio web se ha bloqueado a causa de las normas definidas en su router.<br> Si desea acceder a este sitio web, modifique sus normas o póngase en contacto con el administrador de su red.
+adm.node.clientstatus,Estatus del cliente
+client.wired.status,Dispositivos cableados conectados 
+client.wireless.status24,Dispositivos wireless de 2.4 GHz conectados
+client.wireless.status5g,Dispositivos wireless de 5 GHz conectados
+client.ssid,SSID
+client.linkrate,Velocidad de enlace
+schedule.add.rules,Agregar regla de programación
+schedule.everyday,Cada día
+schedule.sunday,Dom.
+schedule.monday,Lun.
+schedule.tuesday,Mar.
+schedule.wednesday,Mié.
+schedule.thursday,Jue.
+schedule.friday,Vie.
+schedule.saturday,Sáb.
+schedule.allday,Todo el día
+schedule.alert.maxrule,La cantidad máxima de reglas es de 16.
+access.add.rule,Agregar regla de control de acceso
+ip.address.blank,La dirección IP no no debe dejarse en blanco.
+ip.port.blank,El puerto no debe dejarse en blanco.
+access.alert.maxrule,La cantidad máxima de reglas es de 24.
+single.port.addrule,Agregar regla de servidor virtual
+trigger.add.rule,Agregar regla de activación de puerto
+range.add.rule,Agregar regla para juegos
+macfilter.add.rule,Agregar regla de filtro MAC
+mac.address.blank,La dirección MAC no debe dejarse en blanco.
+new.schedule,Agregar nuevo
+ipv6.link.local,Link Local
+ipv6.auto.conf,Autoconfiguración (SLAAC/DHCPv6)
+ipv6.6to4,Túnel 6to4
+ipv6.6rd,Túnel 6rd
+ipv6.wan.ip,Dirección WAN IPv6
+ipv6.wan.prefixlen,Longitud del prefijo WAN IPv6
+ipv6.wan.gw,Pasarela IPv6 por defecto
+ipv6.wan.dns.mode,Modo DNS IPv6
+ipv6.wan.pri.dns,Servidor primario DNS IPv6
+ipv6.wan.sec.dns,Servidor secundario DNS IPv6
+ipv6.lan.prefix,Prefijo LAN IPv6
+ipv6.lan.prefix.len,Longitud del prefijo LAN IPv6
+ipv6.6rd.prefix,Prefijo 6rd
+ipv6.6rd.prefix.len,Longitud del prefijo 6rd
+ipv6.6rd.border.relay,Border Relay 6rd
+ipv6.6rd.addr.mask,Máscara de dirección IPv4 6rd
+ipv6.6to4.mode,Modo de túnel 6to4
+ipv6.6to4.server,Servidor 6to4
+ipv6.alert.2,La Dirección IP WAN no debe dejarse en blanco.
+ipv6.alert.3,La longitud del prefijo no debe dejarse en blanco.
+ipv6.alert.4,Indique una longitud correcta del prefijo entre 1 y 128.
+ipv6.alert.5,La pasarela no debe dejarse en blanco.
+ipv6.alert.6,El DNS primario no debe dejarse en blanco.
+ipv6.alert.7,El prefijo de LAN interna no debe dejarse en blanco.
+ipv6.alert.8,Indique un prefijo válido, p. ej. 2008:1234::
+ipv6.alert.9,El servidor 6to4 no debe dejarse en blanco.
+ipv6.alert.10,El servidor 6to4 no es válido. Indique un nombre de dominio o una dirección IP válidos.
+ipv6.alert.11,La ID de subred no debe dejarse en blanco.
+ipv6.alert.12,La longitud del prefijo de LAN interna no debe dejarse en blanco.
+ipv6.alert.13,El prefijo 6rd no debe dejarse en blanco.
+ipv6.alert.14,La longitud del prefijo 6rd no debe dejarse en blanco.
+ipv6.alert.15,El servidor 6rd no debe dejarse en blanco.
+ipv6.alert.16,La máscara del servidor 6rd no debe dejarse en blanco.
+ipv6.alert.17,La longitud del prefijo 6rd debe coincidir con el prefijo 6rd.
+ipv6.alert.18,El servidor 6rd no es válido. Indique un nombre de dominio o dirección IP válido.
+ipv6.alert.19,Indique una longitud de máscara correcta, entre 0 y 32.
+ipv6.connected,Conectado
+ipv6.disconnected,Desconectado
+ipv6.undetermined,No determinado
+ipv6.pppoe.session,Sesión PPPoE 
+ipv6.pppoe.session.share,Compartir con IPv4
+ipv6.pppoe.session.new,Crear nueva sesión
+ipv6.pppoe.warning,No olvide indicar su identificador de usuario PPPoE y su contraseña en la configuración de red de área amplia (WAN).
+lan.alert.25,La cantidad máxima de reservaciones DHCP es de 24.
+wi.alert.5,Error en la conexión WAN, compruebe la conexión física al puerto WAN.
+wi.alert.6,Inyección de comando
+adm.node.client.desc,Esta sección le permite monitorizar los dispositivos cliente wireless y cableados que están conectados a su router actualmente.
+client.wi.connected,Dispositivos wireless conectados
+usb.node.bt.client,Cliente BT
+usb.node.itunes,Servidor iTunes
+wl.1,Estado de enlace de estacion
+wl.2,Exploracion de zona de red wireless
+wl.3,Opcion de configuracion
+wl.4,Banda de frecuencia
+wl.5,Seguridad wireless
+wl.6,104 / 128-bit (26 digitos hexadecimales)
+wl.7,40 / 64-bit (10 digitos hexadecimales)
+wl.20,Numero de redes wireless
+wl.21,Nombre de wireless (SSID).
+wl.alert.1,Introduzca 10 caracteres hexadecimales para la clave
+wl.alert.2,Introduzca 26 caracteres hexadecimales para la clave
+wl.alert.3,Introduzca 10 o 26 caracteres hexadecimales para la clave
+wl.alert.4,Especifique el nombre de red (SSID).
+wl.alert.5,No se puede obtener el modo.
+wl.alert.6,Seleccione un punto de acceso o router que desee conectar y pulse de nuevo en Connect (conectar).
+wl.alert.7,No se admite el modo de seguridad WPA-Enterprise
+wl.alert.8,No se admite el modo de seguridad WPA2-Enterprise
+wl.alert.9,no se encuentra, compruebe el nombre SSID y la configuracion de nuevo
+wl.ghz,GHz
+wl.key.1,Tecla 1
+wl.key.tx,Clave Tx
+wl.passphrase,Contraseña / clave WiFi
+wl.open,Abre
+wl.shared,Compartido
+wl.status,Estado Enlace
+wl.status.1,BSSID
+wl.status.2,Banda de radio
+wl.status.3,Ancho de canal
+wl.status.4,Canal amplio
+wl.status.5,Tasa de bits
+wl.status.6,Senal
+wl.status.7,Seguridad
+wl.wpa.p,WPA Personal
+wl.wpa2.p,WPA2-Personal
+wl.wait,Por favor, espere
+ww.26,Autentificación
+ww.29,Encriptación
+wireless.node.ss,Revision de Sitio
+wireless.node.bws,Configuración manual
+site_survey.desc,Seleccione su conexión wireless en la lista y haga clic en Connect (conectar).
+site_survey.desc2,Si se requiere, indique su clave WiFi o contraseña para la red wireless.
+HT.confirm,Cuidado: Sus dispositivos wireless N solamente funcionaran a tasas de datos wireless G con el tipo de cifrado que ha escogido. Seleccione el cifrado WPA2-Personal si desea que sus dispositivos wireless N funcionen a la tasa de datos maxima. Haga clic en Aceptar para seguir con esta seleccion, o en Cancelar para elegir otro tipo de cifrado.

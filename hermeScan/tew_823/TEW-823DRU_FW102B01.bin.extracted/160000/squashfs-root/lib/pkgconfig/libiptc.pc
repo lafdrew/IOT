@@ -1,0 +1,11 @@
+
+prefix=/home/823/AthSDK/rootfs/target
+exec_prefix=${prefix}
+libdir=/home/823/AthSDK/rootfs/target/lib
+includedir=${prefix}/include
+
+Name:		libiptc
+Description:	iptables ruleset ADT and kernel interface
+Version:	1.4.5
+Libs:		-L${libdir} -liptc
+Cflags:		-I${includedir}

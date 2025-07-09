@@ -1,0 +1,142 @@
+#!/bin/sh
+ping_file="/var/tmp/ping_file"
+#ping_file="ping_file"
+bw_init=$1
+bw=$1
+bw_output=0
+bw_range=$2
+receive_packets=0
+rtt=0
+rtt_total=0
+lower_bound=${bw}k
+upper_bound=$(($bw + $bw_range))
+upper_bound=${upper_bound}k
+std_rtt=0
+portion=0
+crossover=0
+rtt_init=0
+del_max_1=0
+del_max_2=0
+del_min_1=999
+del_min_2=999
+del_packets=0
+rtt_init_counter=0
+
+rtt_init_array=$(cat $ping_file | sed -n "2,6p" | grep 'ttl=' | sed 's/.*time=//g' | sed 's/ ms//g' | sed 's/\..*//')
+
+for cal_init_rtt in $rtt_init_array ;do
+	rtt_init=$(($rtt_init + $cal_init_rtt))
+	rtt_init_counter=$(($rtt_init_counter + 1))
+done
+rtt_init=$(($rtt_init / $rtt_init_counter))
+x_cmp_rtt=$(($rtt_init \* 3))
+
+if [ "$3" -eq 1 ]; then
+	portion=1
+	crossover=1
+fi
+
+while [ -n "$(grep $upper_bound $ping_file)" ]; do
+	start=$(grep -n $lower_bound $ping_file | sed 's/:.*//g')
+	end=$(grep -n $upper_bound $ping_file | sed 's/:.*//g')
+	cal=$(($end - $start - 1))
+	go_where=$(cat $ping_file | sed -n "${start},${end}p" | grep 'ttl=' | sed 's/.*time=//g' | sed 's/ ms//g' | sed 's/\..*//')
+
+	for tmp in $go_where ;do
+		receive_packets=$(($receive_packets + 1))
+		rtt=$(($rtt + $tmp))
+		tmp_swp=$tmp
+		if [ "$tmp" -lt "$del_min_1" ]; then
+			swp=$del_min_1
+			del_min_1=$tmp
+			tmp=$swp
+		fi
+
+		if [ "$tmp" -lt "$del_min_2" ]; then
+			del_min_2=$tmp
+		fi
+		tmp=$tmp_swp
+		if [ "$tmp" -gt "$del_max_1" ]; then
+			swp=$del_max_1
+			del_max_1=$tmp
+			tmp=$swp
+		fi
+
+		if [ "$tmp" -gt "$del_max_2" ]; then
+			del_max_2=$tmp
+		fi
+
+	done
+	#del 2max and 2min
+	if [ "$receive_packets" -gt 4 ]; then
+		rtt=$(($rtt - del_min_1))
+		rtt=$(($rtt - del_min_2))
+		rtt=$(($rtt - del_max_1))
+		rtt=$(($rtt - del_max_2))
+		del_packets=4
+	fi 
+
+	#cal rtt average
+	if [ "$rtt" -ne 0 -a "$receive_packets" -ne 0 ]; then
+		receive_packets=$(($receive_packets - $del_packets))
+		rtt_avg=$(($rtt / $receive_packets))
+	else
+		rtt_avg=0
+	fi
+
+	bw_output=$bw
+	if [ "$std_rtt" -gt 0 -a "$rtt_avg" -gt 0 -a "$crossover" -eq 0 ]; then
+		#gt add 100% 
+		swp=$(($std_rtt / 2))
+		cmp_rtt=$(($std_rtt + $std_rtt))
+		#x_cmp_rtt > std x 3
+		#x_cmp_rtt=$(($x_cmp_rtt + $swp))
+		if [ "$rtt_avg" -gt "$cmp_rtt" -a "$rtt_avg" -gt "$rtt_init" ]; then
+			crossover=1
+		elif [ "$rtt_avg" -gt "$x_cmp_rtt" ]; then
+			crossover=1
+		fi
+		std_rtt=$rtt_avg
+	elif [ "$std_rtt" -eq 0 -o "$rtt_avg" -eq 0 ]; then
+		std_rtt=$rtt_avg
+	else
+		#gt add 10%
+		swp=$(($std_rtt / 10))
+		cmp_rtt=$(($std_rtt + $swp))
+		if [ "$rtt_avg" -le "$cmp_rtt" -o "$del_packets" -gt 5 ]; then
+			bw_output=$(($bw_output - $bw_range - $bw_range))
+			echo $bw_output
+			exit	
+		else
+			std_rtt=$rtt_avg
+		fi
+	fi
+
+	lower_bound=$(($bw + $bw_range))
+	lower_bound=${lower_bound}k
+	bw=$(($bw + $bw_range))
+	upper_bound=$(($bw + $bw_range))
+	upper_bound=${upper_bound}k
+	
+	rtt=0
+	receive_packets=0
+	del_packets=0
+	del_max_1=0
+	del_max_2=0
+	del_min_1=999
+	del_min_2=999
+done
+
+if [ "$portion" -eq 1 ]; then
+	bw_output=$(($bw_output - $bw_range))
+fi
+
+if [ "$crossover" -eq 1 ]; then
+	bw_output=$(($bw_output - 1))
+fi
+
+if [ "$bw_output" -le 0 ]; then
+	bw_output=0
+fi
+	
+echo $bw_output

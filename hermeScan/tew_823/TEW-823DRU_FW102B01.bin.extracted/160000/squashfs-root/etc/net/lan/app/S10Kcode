@@ -1,0 +1,61 @@
+#!/bin/sh
+kcode_init()
+{
+	echo -n 10240 > /proc/sys/vm/min_free_kbytes
+	echo "Initialize kcode modules start"
+	mkdir -p /var/kcode_shared
+	echo Initialize Hotplug
+	
+	
+	MYPIDS=`ps | grep webfile_monitor | grep -v grep | grep -v killall`
+	echo [$MYPIDS]
+	if [ -z "$MYPIDS" ]; then
+		echo run only
+		webfile_monitor &
+		echo /sbin/hotplug > /proc/sys/kernel/hotplug
+	else
+	  echo not need	
+	fi
+	
+	echo Starting kcode
+	insmod /lib/modules/kcode/GPL_NetUSB.ko
+	insmod /lib/modules/kcode/NetUSB.ko
+
+	insmod /lib/modules/`uname -r`/kernel/drivers/usb/host/ehci-hcd.ko
+}
+kcode_stop()
+{
+	# come from app.c:wcn_stop()
+	echo "STOP kcode HotPlug"
+		rmmod GPL_NetUSB.ko
+        rmmod NetUSB.ko
+}
+case $1 in
+start)
+	echo 'KCODE START'
+
+	if [ -f /tmp/kcode_inited ];then
+		exit 0
+	fi
+
+	echo "Starting HotPlug"
+	echo Initialize USB Storage
+	insmod /lib/modules/`uname -r`/kernel/drivers/usb/storage/usb-storage.ko
+	echo "" > /tmp/kcode_inited
+#	/bin/KC_SMB &
+#	/bin/KC_FTP &
+	
+        break
+        ;;
+stop)
+	echo 'KCODE STOP'
+        break
+        ;;
+init)
+	echo 'KCODE INIT'
+       	kcode_init
+        break
+        ;;
+esac
+exit 0
+

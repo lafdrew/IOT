@@ -1,0 +1,493 @@
+*
+{
+	margin: 0;
+	/*padding: 0;
+	border:0;
+	outline: none;*/
+}
+
+html
+{
+	background: #000 url(../images/bg4.gif) top center;
+}
+
+body
+{
+	font: 14px verdana,arial,sans-serif;
+}
+
+.wrapper
+{
+	margin: 0 auto -4em;
+	min-width:1000px;
+	min-height: 500px;
+}
+
+.maintable
+{
+	position:relative;
+	margin-left: auto;
+	margin-right: auto;
+	z-index:100;
+}
+
+.txt_main
+{
+	font: 13px verdana,arial,sans-serif;
+	width:100%;
+}
+
+.header
+{
+	height: 90px;
+}
+
+.header_1
+{
+	height:90px;
+}
+
+.divider
+{
+	position: absolute;
+	width: 100%;
+	height:100px;
+	margin-left: auto;
+	margin-right: auto;
+	top:10px;
+	z-index:0;
+}
+
+.description
+{
+	font: bold 16px verdana,arial,sans-serif;
+	text-shadow:  0px -1px 1px rgba(0,0,0,1);
+	letter-spacing: 1px;
+	color: #CCC;
+}
+
+.txt_footer {
+	font: normal 12px verdana,arial,sans-serif;
+	color: #8d9095;
+}
+
+.txt_footer a{
+	color:#8d9095;
+	font-weight: bold;
+	TEXT-DECORATION: none;
+}
+
+.txt_footer a:hover{
+	color:#8d9095;
+	TEXT-DECORATION: underline;
+}
+
+.category
+{
+	letter-spacing: 1px;
+	font: bold 20px verdana,arial,sans-serif;
+	color:#EEE;
+	text-shadow:  0px -1px 1px rgba(0,0,0,1);
+	text-decoration: none;
+}
+
+A.category
+{
+	letter-spacing: 1px;
+	font: bold 20px verdana,arial,sans-serif;
+	color:#EEE;
+	text-shadow:  0px -1px 1px rgba(0,0,0,1);
+	text-decoration: none;
+
+}
+
+A.category:hover
+{
+	letter-spacing: 1px;
+	font: bold 20px verdana,arial,sans-serif;
+	color:#FFF;
+	text-shadow:  0px -1px 1px rgba(0,0,0,1);
+	text-decoration: none;
+}
+
+.side
+{
+	position:absolute;
+  	width:225px;
+	z-index:100;
+}
+
+.mainDiv
+{
+	width:224px;
+}
+
+.link
+{
+	width: 225px; 
+}
+
+.mainheader
+{
+	background:url(../images/1.gif) no-repeat left top;
+	padding: 3px 0px 0px 10px;
+	text-decoration:none;
+	height: 36px;
+}
+
+.mainheader2
+{
+	background:url(../image/nav/m_t_bg_5.gif) no-repeat left top;
+	padding: 0px 0px 0px 0px;
+	text-decoration:none;
+	font: bold 12px verdana,arial,sans-serif;
+	height:29px;
+	color: white;
+	width: 225px;
+	border: 0px solid #7b848f;
+	text-indent:10px;
+}
+
+.nav_header {
+	font: bold 18px verdana,arial,sans-serif;
+	text-shadow:  0px -1px 0px rgba(0,0,0,1);
+	letter-spacing: 1px;
+	color: #FFFFFF;
+	padding: 3px 0px 0px 10px;
+}
+
+.mainheader3
+{
+	background:url(../image/nav/m_t_bg_7.gif) no-repeat left top;
+	margin-top:5px;
+	padding: 0px 0px 0px 10px;
+	text-decoration:none;
+	font: bold 12px verdana,arial,sans-serif;
+	height:29px;
+	width: 225px;
+	color: white;
+	cursor:pointer;
+}
+
+.txt_grey
+{
+	clear: left;
+	color:#333;
+	font-weight:bold;
+	font-family: tahoma; 
+	font-size: 11px;
+	TEXT-DECORATION: none;
+}
+
+.txt_grey2
+{
+	clear: left;
+	color:#333;
+	font-weight:bold;
+	font-family: tahoma; 
+	font-size: 12px;
+	TEXT-DECORATION: none;
+}
+	
+#current
+{
+	background-color: #000FFF;
+}
+
+.subcategory
+{
+	font-size: 13px;
+	line-height: 1.5em;
+	color: #333333;
+	background-color: #FFFFFF;
+	background-image: url(/image/nav/bg_subcategory.gif);
+	background-repeat: repeat-x;
+}
+
+.border
+{
+	border-bottom: 1px solid #9ba7b2;
+}
+
+.tabtext
+{
+	font-size:11px;
+	line-height:normal;
+}
+
+.txt_subheader
+{
+	font: bold 18px verdana,arial,sans-serif;
+	color: #333;
+	padding:0px 0px 10px 0px
+}
+	
+table
+{
+	border-collapse: collapse;
+}
+
+.nounderline
+{
+	text-decoration:none;
+}
+
+/*ACCORDIION STYLE START*/
+.arrowlistmenu
+{
+	width:270px; /*width of accordion menu*/
+	padding: 40px 0px 0px 26px;
+}
+
+.borderbottom{
+	border-bottom:1px solid #76787e;
+	height:1px;
+	width:252px;
+}
+
+.arrowlistmenu .menuheader
+{
+	/*CSS class for menu headers in general (expanding or not!)*/
+	font: bold 16px Arial;
+	color: white;
+	background: transparent url(../images/button_out.png) no-repeat bottom left  ;
+	margin-bottom: 0px; /*bottom spacing between header and rest of content*/
+	padding: 18px 5px 10px 0px; /*header text is indented 10px*/
+	text-indent:10px;
+	margin:0;
+	cursor: pointer;
+	width:252px;
+	height:30px;
+	text-shadow:  0px -1px 1px rgba(0,0,0,1);
+}
+
+.menuheader:hover
+{
+	background: transparent url(/images/button_over0.png) no-repeat bottom left  ;
+	width:252px;
+	height:30px;
+}
+
+.arrowlistmenu .openheader
+{
+	/*CSS class to apply to expandable header when it's expanded*/
+	background: transparent url(../images/button_over.png) no-repeat bottom right  ;
+	width:261px;
+	border-bottom:1px;
+	height:30px;
+}
+
+.arrowlistmenu ul
+{
+	/*CSS for UL of each sub menu*/
+	position:relative;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0;
+	padding:5px 0px 10px 0px; /*bottom spacing between each UL and rest of content*/
+	border-bottom:1px solid #76787e;
+	border-right:1px solid #000;
+	width:252px;
+	background: transparent url(../images/button_over_sub.png) bottom left;
+}
+
+.arrowlistmenu ul li
+{
+	margin: 2px 0 0 10px;
+	padding:-8px 0 0 -10px;
+	background:url('../images/bullet.png') 10px 9px no-repeat ;
+}
+
+.arrowlistmenu ul li .opensubheader
+{
+	/*Open state CSS for sub menu header*/
+	width:251px;
+}
+
+.arrowlistmenu ul li .closedsubheader
+{
+	/*Closed state CSS for sub menu header*/
+	background: lightgreen !important;
+}
+
+.arrowlistmenu ul li a
+{
+	color: #FFFFFF;
+	display: block;
+	padding: 3px 0 6px 19px;
+	margin:0px 20px 0px 5px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 100%;
+	font:  14px Arial;
+	cursor: pointer;
+	outline: none;
+	border:none;
+}
+
+.arrowlistmenu ul li a:hover,  .arrowlistmenu ul li a:visited, .arrowlistmenu ul li a:active
+{
+	/*hover state CSS*/
+	border:none;
+	color:#00aff0;
+	text-decoration:none;
+}
+
+.arrowlistmenu ul li a.subexpandable:hover
+{
+	/*hover state CSS for sub menu header*/
+	background: lightblue;
+	color:#00aff0;
+}
+
+.categoryitems ul
+{
+}
+/*ACCORDIION STYLE END*/
+
+/* 
+  -- Even more rounded corners with CSS: Base stylesheet --
+*/
+
+.dialog, .dialog2
+{
+	position:relative;
+	margin:-20px auto -30px auto;
+	min-width:8em;
+	max-width:1000px; /* based on image dimensions - not quite consistent with drip styles yet */
+	color:#fff;
+	z-index:1;
+	margin-left:12px; /* default, width of left corner */
+	margin-bottom:25px; /* spacing under dialog */
+}
+
+.dialogbiger
+{
+	position:relative;
+	margin:-20px auto -30px auto;
+	min-width:8em;
+	max-width:1160px; /* based on image dimensions - not quite consistent with drip styles yet */
+	color:#fff;
+	z-index:1;
+	margin-left:12px; /* default, width of left corner */
+	margin-bottom:25px; /* spacing under dialog */
+}
+
+.dialog .content,
+.dialog .t,
+.dialog .b,
+.dialog .b div
+{
+	background:transparent url(../images/bg_main2.png) no-repeat top right;
+}
+
+.dialog2 .content,
+.dialog2 .t,
+.dialog2 .b,
+.dialog2 .b div {
+ background:transparent url(../images/bg_main3.png) no-repeat top right;
+}
+
+.dialog .content, .dialog2 .content
+{
+	position:relative;
+	zoom:1;
+	_overflow-y:hidden;
+	padding:0px 12px 0px 0px;
+}
+
+.dialog .t, .dialog2 .t
+{
+	/* top+left vertical slice */
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:12px; /* top slice width */
+	margin-left:-12px;
+	height:100%;
+	_height:1600px; /* arbitrary long height, IE 6 */
+	background-position:top left;
+}
+
+.dialog .b
+{
+	/* bottom */
+	position:relative;
+	width:100%;
+}
+
+.dialog .b, .dialog .b div, .dialog2 .b, .dialog2 .b div
+{
+	height:50px; /* height of bottom cap/shade */
+	font-size:1px;
+}
+
+.dialog .b, .dialog2 .b
+{
+	background-position:bottom right;
+}
+
+.dialog .b div, .dialog2 .b div
+{
+	position:relative;
+	width:12px; /* bottom corner width */
+	margin-left:-12px;
+	background-position:bottom left;
+}
+
+.dialog .hd, .dialog .bd, .dialog .ft, .dialog2 .hd, .dialog2 .bd, .dialog2 .ft
+{
+	position:relative;
+}
+
+.dialog .thewrapper, .dialog2 .thewrapper
+{
+	/* extra content protector - preventing vertical overflow (past background) */
+	position:static;
+	max-height:1000px;
+}
+
+.dialog h1, .dialog p, .dialog2 h1, .dialog2 p
+{
+	margin:0px; /* margins will blow out backgrounds, leaving whitespace. */
+	padding:0.5em 0px 0.5em 0px;
+}
+
+.dialog h1, .dialog2 h1
+{
+	padding-bottom:0px;
+}
+
+.CatImage
+{
+	margin: -12px 5px 0px 5px;
+}
+
+.CatTitle
+{
+	position: absolute;
+	margin: 0px 0px 0px 5px;
+	/*white-space:nowrap;*/
+	width:175px;
+	text-indent: 0px;
+}
+
+.hiddentr{
+	display: none;
+}
+
+#dialogoverlay{
+	filter:alpha(opacity=80);opacity:0.8;zoom:1;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 10;
+}
+
+#dialogbox{
+	position: fixed;
+	width:420px;
+	z-index: 10;
+}

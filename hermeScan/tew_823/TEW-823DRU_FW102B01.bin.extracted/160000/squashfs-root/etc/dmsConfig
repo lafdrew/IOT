@@ -1,0 +1,6 @@
+path = "/tmp/kcode_shared"
+deviceName = "DMS TEW823"
+manufacturer = "KCodes"
+dmsModelName = "NetMedia"
+modelNumber = "1.0"
+modelDescription = "KCodes Media Center"
